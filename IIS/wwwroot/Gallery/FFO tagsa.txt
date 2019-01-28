@@ -1,0 +1,11 @@
+FFO_CopyrightFlag = true
+FFO_Title = ""
+FFO_Author = "Exclusive Cabinets"
+FFO_Caption = ""
+FFO_Category = ""
+FFO_CopyrightNotice = ""
+FFO_ImageURL = "www.exclusivecabinets.co.za"
+
+FFO_KeywordsAdd 
+
+FFO_ SuppCatAdd 

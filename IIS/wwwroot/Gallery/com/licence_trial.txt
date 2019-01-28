@@ -1,0 +1,16 @@
+Chestysoft csImageFile 5.0 Trial Version
+
+
+PLEASE READ THESE TERMS AND CONDITIONS BEFORE INSTALLING THE SOFTWARE.
+
+These terms and conditions apply to the Chestysoft csImageFile programme and any accompanying documentation (referred to as  "the software"). By installing the software, you are considered to have agreed to the terms and conditions.
+
+This licence grants you a non-exclusive licence to install and use the software on any server computer that you own.
+
+The software is the intellectual property of Chestysoft, and may not be  disassembled or sold. You may redistribute this trial copy only if all accompanying documentation is included unmodified.
+
+The software is supplied "as is" and without warranties as to performance or purpose. Chestysoft do not accept any liabilities which may arise directly or indirectly from its use.
+
+Chestysoft, December 2005.
+Web site: www.chestysoft.com
+Email: info@chestysoft.com

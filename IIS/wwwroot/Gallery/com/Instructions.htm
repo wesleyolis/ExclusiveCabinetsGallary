@@ -1,0 +1,2395 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<TITLE>csImageFile Instructions</TITLE>
+<style>
+BODY {
+	color: #000000;
+	background-color: White;
+	font-family:  Verdana, Arial, sans-serif;
+	font-size: 10pt;
+	text-align: left;
+}
+
+A {
+	color:  #336699;
+	text-decoration: none;
+	font-family:  Verdana, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+
+A:HOVER {
+	color: #FF9900;
+	text-decoration: underline;
+}
+
+A:ACTIVE {
+	COLOR : #33CCCC;
+	}
+
+
+	
+A.nav {
+	color:  #CCFF66;
+	text-decoration: none;
+	font-family:  Verdana, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+
+A.nav:HOVER {
+	color: #FF9900;
+	text-decoration: none;
+}
+
+A.nav:ACTIVE {
+	COLOR : #33CCCC;
+	}
+
+
+A.low {
+ 	color: #006699;
+	text-decoration: none;
+	font-family:  Verdana, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+TD  
+	{
+	font-family : Arial, Verdana,sans-serif;
+	font-style : normal;
+	color : #000000;
+	font-size: 10pt;
+	
+}
+
+P {
+
+	font-family : Arial, sans-serif;
+	font-style : normal;
+	font-size: 10pt;
+	color : #000000;
+	}
+
+.courier
+{
+	font-family : "Courier New", Courier, monospace;
+	font-style : normal;
+	font-size: 10pt;
+	color : #000000;
+}
+	
+.title {
+	font-family : Arial, sans-serif;
+	font-style : normal;
+	font-weight : bold;
+	font-size: 14pt;
+	color : #000000;
+}
+	
+
+OL{
+	font-family : Arial, Verdana, sans-serif;
+		color : #000000;
+}
+B
+ {
+ font-family : Arial, Verdana, sans-serif;
+	font-weight : bold;
+	font-size: 10pt;
+}
+	
+</style>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<B> 
+<h1 align="center">Chestysoft</h1>
+</B> 
+<P align="CENTER">Website: <A href="http://www.chestysoft.com/">www.chestysoft.com</A><B> 
+  </B>Email: <A href="mailto:info@chestysoft.com">info@chestysoft.com</A></P>
+<p align=center class=title>csImageFile - COM Object for Image Resize, Editing and Manipulation<BR>
+  Version 5.0</p>
+
+<p class=title>Introduction</p>
+
+<P>This is a COM object that enables images of various formats to be created, resized or edited. It is a non-visual component developed for server 
+side scripting, especially Active Server Pages, and functionality allows dynamically produced images to be sent straight to the browser. It can 
+also be used by other COM enabled tools including Cold Fusion and ASP.NET.</p>
+ 
+<p>A free, fully functional trial version of csImageFile is available. This trial version has a built in expiry date that causes most of the 
+functions to stop working after that time. This is the only difference in functionality between the trial and full versions. This means that 
+you can fully test if this component is suitable for your application before considering whether to license the full version.</p>
+
+<p class=title>Using these Instructions</p>
+
+<p>This is a COM object that enables images of various formats to be created, resized or edited. It is a non-visual component 
+developed for server side scripting, especially Active Server Pages, and functionality allows dynamically produced images to 
+be sent straight to the browser. It can also be used by other COM enabled tools including Cold Fusion and ASP.NET.</p>
+
+<p>A free, fully functional trial version of csImageFile is available. This trial version has a built in expiry date that causes 
+most of the functions to stop working after that time. This is the only difference in functionality between the trial and full versions. 
+This means that you can fully test if this component is suitable for your application before considering whether to license the full version.</p>
+
+<p class=title>Using These Instructions</p>
+
+<p>These instructions are divided into a number of sections with the relevant methods and properties described in each. There are quick 
+links to some sections below.  A full Table of Contents is available on the next page and an index listing all commands in alphabetical 
+order is included at the back for easy reference. The PDF version also has bookmarks for direct navigation to each heading.</p>
+
+<p>Click on one of the links below to go directly to the section of interest:</p>
+
+<ul>
+  <li><a href = #sect1 class=low>Registering the Component and Getting Started</a></li>
+  <li><a href = #sect2 class=low>Import and Export of Images</a></li>
+  <li><a href = #sect3 class=low>Image Resize and Manipulation</a></li>
+  <li><a href = #sect4 class=low>Drawing on the Image</a></li>
+  <li><a href = #sect5 class=low>Adding Text to an Image</a></li>
+  <li><a href = #sect8 class=low>Streaming an Image to the Browser</a></li>
+  <li><a href = #sect9 class=low>Language Specific Issues (ASP, Cold Fusion, Visual Basic and ASP.NET)</a></li>
+  <li><a href = #sect11 class=low>Web Examples</a></li>
+  <li><a href = #sect15 class=low>Alphabetical List of Commands</a></li>
+</ul>
+
+<a name="toc"></a><p class=title>Table of Contents</p>
+<p><a href = #sect1 class=low>1. Registering the Component and Getting Started</a><br>
+&nbsp;&nbsp;<a href = #sect1.1 class=low>1.1. Registration and Server Permissions</a><br>
+&nbsp;&nbsp;<a href = #sect1.2 class=low>1.2. Object Creation</a><br>
+&nbsp;&nbsp;<a href = #sect1.3 class=low>1.3. The Trial Version</a><br>
+&nbsp;&nbsp;<a href = #sect1.4 class=low>1.4. Accessing Files Across a Network</a></p>
+<p><a href = #sect2 class=low>2. Import and Export of Images</a><br>
+&nbsp;&nbsp;<a href = #sect2.1 class=low>2.1. Methods for Import and Export</a><br>
+&nbsp;&nbsp;<a href = #sect2.2 class=low>2.2. Properties for Import and Export</a><br>
+&nbsp;&nbsp;<a href = #sect2.3 class=low>2.3. Properties for Binary Image Export and Streaming</a><br>
+&nbsp;&nbsp;<a href = #sect2.4 class=low>2.4. TIFF Compression and Multipage Support</a></p>
+<p><a href = #sect3 class=low>3. Image Resize and Manipulation</a><br>
+&nbsp;&nbsp;<a href = #sect3.1 class=low>3.1. Methods for Image Manipulation</a><br>
+&nbsp;&nbsp;<a href = #sect3.2 class=low>3.2. Properties for Image Manipulation</a><br>
+&nbsp;&nbsp;<a href = #sect3.3 class=low>3.3. The Merge Methods and Properties</a></p>
+<p><a href = #sect4 class=low>4. Drawing on the Image</a><br>
+&nbsp;&nbsp;<a href = #sect4.1 class=low>4.1. Methods for Drawing</a><br>
+&nbsp;&nbsp;<a href = #sect4.2 class=low>4.2. Properties for Drawing</a></p>
+<p><a href = #sect5 class=low>5. Adding Text to an Image</a></p>
+<p><a href = #sect6 class=low>6. IPTC Text / File Info</a><br>
+&nbsp;&nbsp;<a href = #sect6.1 class=low>6.1. IPTC / File Info Properties</a><br>
+&nbsp;&nbsp;<a href = #sect6.2 class=low>6.2. IPTC / File Info Methods</a></p>
+<p><a href = #sect7 class=low>7. EXIF Attributes</a><br>
+&nbsp;&nbsp;<a href = #sect7.1 class=low>7.1. Reading Exif Attributes</a><br>
+&nbsp;&nbsp;<a href = #sect7.2 class=low>7.2. Writing Exif Attributes</a><br>
+&nbsp;&nbsp;<a href = #sect7.3 class=low>7.3. Exif Data Types</a><br>
+&nbsp;&nbsp;<a href = #sect7.4 class=low>7.4. Exif Helper Functions</a></p>
+<p><a href = #sect8 class=low>8. Streaming an Image to the Browser</a></p>
+<p><a href = #sect9 class=low>9. Language Specific Issues</a><br>
+&nbsp;&nbsp;<a href = #sect9.1 class=low>9.1. Active Server Pages</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href = #sect9.1.1 class=low>9.1.1. ASP with Javascript</a><br>
+&nbsp;&nbsp;<a href = #sect9.2 class=low>9.2. Cold Fusion</a><br>
+&nbsp;&nbsp;<a href = #sect9.3 class=low>9.3. Visual Basic</a><br>
+&nbsp;&nbsp;<a href = #sect9.4 class=low>9.4. ASP.NET</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href = #sect9.4.1 class=low>9.4.1. Early Binding</a></p>
+<p><a href = #sect10 class=low>10. Utility Functions</a></p>
+<p><a href = #sect11 class=low>11. Web Examples</a></p>
+<p><a href = #sect12 class=low>12. Supported Image Formats</a><br>
+&nbsp;&nbsp;<a href = #sect12.1 class=low>12.1. BMP (Bitmap)</a><br>
+&nbsp;&nbsp;<a href = #sect12.2 class=low>12.2. JPG / JPEG / JPE (Joint Photographic Experts Group)</a><br>
+&nbsp;&nbsp;<a href = #sect12.3 class=low>12.3. GIF (Graphics Interchange Format)</a><br>
+&nbsp;&nbsp;<a href = #sect12.4 class=low>12.4. PNG (Portable Network Graphics)</a><br>
+&nbsp;&nbsp;<a href = #sect12.5 class=low>12.5. TIF / TIFF (Tagged Image File Format)</a><br>
+&nbsp;&nbsp;<a href = #sect12.6 class=low>12.6. PSD (Photoshop Format)</a><br>
+&nbsp;&nbsp;<a href = #sect12.7 class=low>12.7. PCX (ZSoft Paintbrush Format)</a><br>
+&nbsp;&nbsp;<a href = #sect12.8 class=low>12.8. WBMP / WBM (Wireless Bitmap)</a><br>
+<p><a href = #sect13 class=low>13. Revision History</a></p>
+<p><a href = #sect14 class=low>14. Other Products from Chestysoft</a></p>
+<p><a href = #sect15 class=low>15. Alphabetical List of Commands</a></p>
+
+<a name="sect1"></a><p class=title>1. Registering the Component and Getting Started</p>
+
+<a name="sect1.1"></a><p class=title>1.1. Registration and Server Permissions</p>
+
+<p>Before the component can be used the DLL file, csImageFile.dll (or csImageFileTrial.dll for the trial version) must be registered 
+on the server. This can be done using the command line tool REGSVR32.EXE which should be in the Windows System folder. The syntax is:</p>
+
+<p class=courier>regsvr32 <i>dllname</i></p>
+
+<p>where <i>dllname</i> is the path and name of the DLL to register. Chestysoft has a free utility that performs this function through a 
+Windows interface which can be easier although the result is identical. This tool can be downloaded from the Chestysoft web site: 
+<a href="http://www.chestysoft.com/dllregsvr/default.asp" class=low>www.chestysoft.com/dllregsvr/default.asp</p>
+
+<p>The application that uses the component must have permission to read and execute the DLL. In a web application like ASP this means 
+giving the Internet Guest User account Read and Execute permission on the file. This account must also have the appropriate permissions 
+for file handling. Read permission is required to read/open an image from disk. Write permission is required to create a new file or 
+edit an existing file and Modify is required to delete an existing file. These permissions can be set in Windows Explorer and applied 
+to either a folder or individual files.</p>
+
+<a name="sect1.2"></a><p class=title>1.2. Object Creation</p>
+
+<p>In any script or programme that uses the component an object instance must be created. The syntax in ASP is as follows.</p>
+
+<p>For the full version:</p>
+
+<p class=courier>Set Image = Server.CreateObject(&quot;csImageFile.Manage&quot;)</p>
+
+<p>For the trial version:</p>
+
+<p class=courier>Set Image = Server.CreateObject(&quot;csImageFileTrial.Manage&quot;)</p>
+
+<p>In both cases the object name is &quot;Image&quot;, but any variable name could be used.</p>
+
+<a name="sect1.3"></a><p class=title>1.3. The Trial Version</p>
+
+<p>The trial version of the component is supplied as a separate DLL called csImageFileTrial.dll, with a class name of 
+&quot;csImageFileTrial.Manage&quot;. This trial version is fully functional but it has an expiry date, after which time it will stop working. 
+The object can still be created after the expiry date but it cannot load or create images.</p>
+
+<p>The expiry date can be found by reading the <i>Version</i> property.</p>
+
+<a name="Version"></a><p><b>Version</b> - String, read only. This returns the version information and for the trial, the expiry date.</p>
+
+<p>Example:</p>
+
+<p class=courier>Set Image = Server.CreateObject(&quot;csImageFileTrial.Manage&quot;)<br>
+Response.Write Image.Version</p>
+
+<p>Visit the Chestysoft web site for details of how to buy the full version - <a href="http://www.chestysoft.com" class=low>www.chestysoft.com</a>.</p>
+
+<a name="sect1.4"></a><p class=title>1.4. Accessing Files Across a Network</p>
+
+<p>When csImageFile is called from a server side IIS application it runs as the Internet Guest User account (IUSR_machine_name). This is an 
+internal user account and it is not recognised by other computers on the network, so csImageFile will not be able to access network files for 
+reading or writing without further configuration. One solution is to configure Component Services and create a COM+ Application containing 
+csImageFile. This allows a different Windows account to be used when csImageFile is running.</p>
+
+<p>To configure Component Services (found in Administrative Tools) expand the tree view on the left starting with the Component Services 
+node. Below this is &quot;Computers&quot;, &quot;My Computer&quot; and &quot;COM+ Applications&quot;. Right click on COM+ Applications and 
+select New Application and this opens the COM Application Install Wizard. On the first page of the wizard click the button to create an 
+empty application, give it a name and leave the radio button set to &quot;server application&quot;. The next page allows you to select 
+an account that will be used when the component runs. The default is the current logged on user but any network account can be used and 
+the username and password entered. That completes the wizard and the application now appears on the tree. Expand this and right click on 
+the Components folder and select New Component to begin the COM Component Install Wizard. If the component is already registered the middle 
+button can be clicked and csImageFile selected from the list. The configuration is now complete but IIS must be restarted before it will take effect.</p>
+
+<p>It is not necessary to perform this configuration unless files need to be accessed across a network. It may be required in order to 
+use the <i>ReadURL</i> command.</p>
+ 
+<a name="sect2"></a><p class=title>2. Import and Export of Images</p>
+
+<p>An image must be loaded into memory if it is to be processed in some way or converted to another format. Images can be loaded from disk, 
+from a variant array variable (which may be a database field or a file uploaded through our csASPUpload component), from a remote URL or 
+by using the handle to a Windows bitmap.</p>
+
+<p>The image in memory can be exported by saving to disk, or as a variant array variable (which may be sent to the browser using the ASP 
+Response.BinaryWrite function, or saved into a binary database field). The image can be exported using the Windows bitmap handle and this 
+is an efficient way of copying images between instances of csImageFile.</p>
+
+<p>Supported file formats are BMP, GIF, JPG, PCX, PNG, PSD, TIF and WBMP. Some description of these formats is provided in Section 12.</p>
+
+<a name="sect2.1"></a><p class=title>2.1. Methods for Import and Export</p>
+
+<a name="ReadFile"></a><p><b>ReadFile</b> <i>Path</i> - This loads an image into memory from disk where <i>Path</i> must be the full physical 
+path and filename of the image. Version 5 of csImageFile will read an image, even if the extension is incorrect, if the data is in a valid 
+supported format.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.ReadFile &quot;C:\images\somefile.jpg&quot;</p>
+
+<a name="writeFile"></a><p><b>WriteFile</b> <i>Path</i> - This saves the current image to disk, where <i>Path</i> is the full physical 
+path and filename of the new file. The file extension determines the format used and it must be one of the supported formats. It can be 
+a different extension to that of the original file and this is how images can be converted between formats.</p>
+
+<a name="ReadVariant"></a><p><b>ReadVariant</b> <i>FileData</i> - This reads an image into memory from binary data. <i>FileData</i> must be a 
+variant array containing the file information in one of the supported image formats. The variant array (or OLE Variant) is an ActiveX data 
+type commonly used in ASP but it is not supported in all programming environments. <i>ReadVariant</i> may be used to read from our 
+csASPUpload component, another instance of csImageFile, a VBScript variable or a binary database field.</p>
+
+<p>Example of reading a file directly from csASPUpload:</p>
+
+<p class=courier>Image.ReadVariant Upload.FileData(0)</p>
+
+<p>This will read the file from the csASPUpload object called &quot;Upload&quot; assuming it is the first file in the array, or the only 
+uploaded file. If the file is not a valid image it will generate an error.</p>
+
+<p>Example of reading a file from a binary database field:</p>
+
+<p class=courier>FileData = RS("Image")<br>
+Image.ReadVariant FileData</p>
+
+<p>The data must first be passed to a VBScript variable before the <i>ReadVariant</i> command will accept it. The field name is called 
+&quot;Image&quot; and the recordset is called &quot;RS&quot;.</p>
+
+<a name="ReadStream"></a><p><b>ReadStream</b> <i>ImgType</i>, <i>FileData</i> - This command has been replaced by <i>ReadVariant</i> although 
+it is still supported to retain compatibility. <i>FileData</i> is the image as a variant array variable and <i>ImgType</i> is a string 
+containing the extension of the file format, e.g. &quot;jpg&quot;, &quot;bmp&quot; etc. <i>ReadStream</i> could be used if it is important 
+to verify that a file is in a particular format.</p>
+
+<a name="ReadURL"></a><p><b>ReadURL</b> <i>URL</i> - This loads an image into memory from a remote web server where URL is the location 
+of the image complete with the protocol prefix &quot;http://&quot; or &quot;https://&quot;. Version 5 of csImageFile will read the image 
+if it is in a supported format regardless of the extension or content type. A username and password can be sent with the request by setting 
+the <i>URLUsername</i> and <i>URLPassword</i> properties before calling <i>ReadURL</i>.</p>
+
+<p>Note that if the computer running the script is connecting to the internet through a proxy, csImageFile must be added to a COM+ Application 
+as described in Section 1.4. If a firewall is restricting which applications are allowed to access the internet it is &quot;inetinfo.exe&quot; 
+which must be given permission for a script running in IIS. Refer to your firewall documentation for more information.</p>
+
+<a name="DPMToDPI"></a><p><b>DPMToDPI</b>(<i>dpm</i>) - Integer return value. Converts a dots per metre value, <i>dpm</i>, to dots per inch. 
+<i>dpm</i> is an integer.</p>
+
+<a name="DPIToDPM"></a><p><b>DPIToDPM</b>(<i>dpi</i>) - Integer return value. Converts a dots per inch value, <i>dpi</i>, to dots per metre. 
+<i>dpi</i> is an integer.</p>
+
+<a name="sect2.2"></a><p class=title>2.2. Properties for Import and Export</p>
+
+<p>The following properties are related to the import and export of images and they include general properties such as <i>Width</i>, <i>Height</i> 
+and <i>DPI</i>. Some are specific to certain formats such as <i>JpegQuality</i> and <i>ProgressiveJpeg</i>. Some are set when the image is 
+read or created while others can be set before export to alter some feature of the image.</p>
+
+<a name="Height"></a><p><b>Height</b> - Integer, read only. The height of the currently loaded image in pixels. This is read only. To change 
+the size use <i>Resize</i>, <i>Scale</i> or <i>ResizeFit</i>.</p>
+
+<a name="Width"></a><p><b>Width</b> - Integer, read only. The width of the currently loaded image in pixels. This is read only. To resize 
+the image use <i>Resize</i>, <i>Scale</i> or <i>ResizeFit</i>. To check if an image is loaded in memory, test for either the <i>Width</i> or 
+<i>Height</i> having a non zero value.</p>
+
+<a name="ColorDepth"></a><p><b>ColorDepth</b> - Integer, must be 1, 4, 8 or 24. This is the bits per pixel for the current image where 1 bit 
+is a 2 colour image, 4 bit is 16 colours, 8 bit is 256 colours and 24 bit is 16 million RGB colour. These are the only colour depths supported 
+by csImageFile. The property is set when an image is imported and it defaults to 24 for an image created with <i>NewImage</i>. <i>ColorDepth</i> 
+can be edited. Reducing the colour depth may reduce the memory requirement of the image while some image processing requires a 24 bit setting. 
+Use <i>ConvertToBW</i> to convert to 1-bit black and white.</p>
+
+<a name="DPI"></a><p><b>DPI</b> - Integer. The pixel density of the image in dots per inch. csImageFile has one property for the pixel density 
+so setting <i>DPI</i> sets both <i>X</i> and <i>Y</i> pixel density and when an image is loaded it is the X pixel density that sets the property. 
+Note that PNG, GIF and WBMP images do not use this property.</p>
+
+<p>When an image contains Exif data which includes the XResolution and YResolution tags, these values are changed when the <i>DPI</i> property 
+is changed. This is new in version 5.</p>
+
+<a name="JpegQuality"></a><p><b>JpegQuality</b> - Integer in the range 1 to 100. This determines the amount of compression used when an image 
+is exported in JPEG format. A high value is a high quality, large file size. Saving files with a lower value for <i>JpegQuality</i> is one 
+method of reducing file size but it does reduce image quality. (Default = 90)</p>
+
+<a name="ProgressiveJpeg"></a><p><b>ProgressiveJpeg</b> - Boolean. If true a JPG will be saved using progressive compression instead of 
+baseline. This property is set when a JPG is loaded. Note that Internet Explorer does not display a progressive JPG until the entire file 
+is loaded, which is the opposite of what the name suggests. (Default = false)</p>
+
+<a name="JpegGrayScale"></a><p><b>JpegGrayScale</b> - Boolean. JPG images can be stored in an 8-bit greyscale format and this property is 
+set when a JPG is loaded. Setting <i>JpegGrayScale</i> to true will convert a colour image to 8 bit greyscale and it will be exported in this 
+format if saved as a JPG. (Default = false)</p>
+
+<a name="JpegHigherSpeed"></a><p><b>JpegHigherSpeed</b> - Boolean. When set to true any JPG will be loaded using a reduced colour depth. The 
+image will load at a higher speed at the expense of some image quality. Set the property before calling <i>ReadFile</i>, <i>ReadVariant</i> or 
+<i>ReadURL</i>. (Default = false)</p>
+
+<a name="BGColor"></a><p><b>BGColor</b> - String, as a six character &quot;RRGGBB&quot; colour. This is used as the transparent colour when 
+an image is exported in GIF or PNG format, if the <i>Transparent</i> property is set. <i>BGColor</i> is set when a GIF or PNG image with 
+transparency is loaded. <i>BGColor</i> is used in the merge functions when foreground transparency is used. It also determines the 
+background colour of rotations that are not multiples of 90 degrees and when the <i>Crop</i> method is used to enlarge the image area. 
+(Default = white, &quot;FFFFFF&quot;)</p>
+
+<p><b>*** Note ***</b> Colours in csImageFile are always specified as a string value, in the same way as HTML. For example, red is &quot;FF0000&quot; 
+and blue is &quot;0000FF&quot;. These strings are not case sensitive and any leading &quot;#&quot; character will be automatically removed.</p>
+
+<a name="Transparent"></a><p><b>Transparent</b> - Boolean. When true any image output in GIF or PNG format will contain a transparent colour 
+and this colour is specified by <i>BGColor</i>. This property is set when a GIF or PNG is loaded. <i>Transparent</i> is also used in the 
+merge functions to allow foreground transparency. (Default = false)</p>
+
+<a name="FileSize"></a><p><b>FileSize</b> - Integer, read only. This is the size of the image in memory when it was first loaded from disk 
+or a binary variable.</p>
+
+<a name="OriginalImage"></a><p><b>OriginalimageType</b> - Integer, read only. When an image is loaded this property is assigned an integer 
+value to represent the format of that image. It can be used to identify the format if the image was loaded with <i>ReadVariant</i> or <i>ReadURL</i>, 
+or if the original file was saved using the wrong extension. The possible values are: -1 - no image loaded, 0 - BMP, 1 - GIF, 2 - JPG, 3 - PCX, 4 - 
+PNG, 5 - WBMP, 6 - PSD, 7 - TIF.</p>
+
+<a name="IgnoreInputFileType"></a><p><b>IgnoreInputFileType</b> - Boolean. csImageFile version 5 can read an image that has the wrong 
+extension, and this is the default behaviour. Set <i>IgnoreInputFileType</i> to true to raise an error if an image format does not match 
+the extension. (Default = false)</p>
+
+<a name="OverwriteMode"></a><p><b>OverwriteMode</b> - Integer, must be 0, 1 or 2. Used with the <i>WriteFile</i> method to determine what 
+to do with duplicate file names. The default is 0 and this causes files to be saved with the name specified in <i>WriteFile</i>, even if 
+a file by that name already exists. 1 will prevent <i>WriteFile</i> from saving a file if the file name exists. 2 to will cause the file 
+to be renamed if the name is already used and <i>~n</i> is added to the end of the name where <i>n</i> is the lowest available number. A typical 
+use of <i>OverwriteMode</i> is to set it to 2 when reading in files from our csASPUpload component to prevent deletion of duplicate file names.</p>
+
+<a name="OverwriteChr"></a><p><b>OverwriteChr</b> - String. If <i>OverwriteMode</i> is set to 2 and a numbered suffix is added to the file 
+name the value of <i>OverwriteChr</i> is used to separate the file name and the suffix number. The default is &quot;~&quot; but this can prevent 
+a file from being downloaded on Windows 2003 or if URLScan is being used.</p>
+
+<a name="FileName"></a><p><b>FileName</b> - String, read only. After saving a file with <i>WriteFile</i> the full path and name actually used 
+for the file is stored in this property. This may be different from the path specified if <i>OverwriteMode</i> is used.</p>
+
+<a name="NewFileSize"></a><p><b>NewFileSize</b>(<i>Type</i>) - Integer, read only. This is the file size that will be produced if the current 
+image is exported in the format specified by <i>Type</i>. <i>Type</i> must be the string value &quot;jpg&quot;, &quot;bmp&quot;, &quot;png&quot;, 
+&quot;pcx&quot;, &quot;psd7quot;, &quot;gif&quot;, &quot;tif&quot; or &quot;wbmp&quot;.</p>
+
+<a name="WasCMYK"></a><p><b>WasCMYK</b> - Boolean, read only. This gets set to true if a JPG, TIF or PSD image is read in CMYK format. It 
+indicates that the image has been converted to RGB.</p>
+
+<a name="UseLZW"></a><p><b>UseLZW</b> - Boolean. When false support for LZW compression (for GIFs and some TIFs) is disabled. It was introduced 
+when there was a patent relating to LZW compression but this has since expired and the property is unlikely to be needed. (Default = true)</p>
+
+<a name="sect2.3"></a><p class=title>2.3. Properties for Binary Image Export and Streaming</p>
+
+<p>The following properties return the current image as a variant array, which is the format used by the ASP Response.BinaryWrite command. They are 
+used to stream an image to the browser, as described in more detail in Section 8. This format can also be used to copy an image into a binary 
+database field. Not all programming environments support the variant array data type.</p>
+
+<p>A separate property is used for each supported image type.</p>
+
+<a name="JPGData"></a><p><b>JPGData</b> - Variant array, read only. The image in JPG format.</p>
+
+<p>Example of sending a JPG to the browser:</p>
+
+<p class=courier>Response.ContentType = &quot;image/jpeg&quot;<br>
+Response.BinaryWrite Image.JPGData</p>
+
+<p>This would be used inside a script that is called from inside a &lt;IMG&gt; tag, as described in Section 8.</p>
+
+<a name="GIFData"></a><p><b>GIFData</b> - Variant array, read only. The image in GIF format.</p>
+
+<p>Example of saving a GIF into a binary database field:</p>
+
+<p class=courier>RS(&quot;ImageField&quot;) = Image.GIFData</p>
+
+<p>This assumes the binary database field is called &quot;ImageField&quot; and that the recordset is called &quot;RS&quot;.</p>
+
+<a name="BMPData"></a><p><b>BMPData</b> - Variant array, read only. The image in bitmap format.</p>
+
+<a name="PNGData"></a><p><b>PNGData</b> - Variant array, read only. The image in PNG format.</p>
+
+<a name="TIFData"></a><p><b>TIFData</b> - Variant array, read only. The image in TIF format.</p>
+
+<a name="PCXData"></a><p><b>PCXData</b> - Variant array, read only. The image in PCX format.</p>
+
+<a name="PSDData"></a><p><b>PSDData</b> - Variant array, read only. The image in PSD format.</p>
+
+<a name="WBMPData"></a><p><b>WBMPData</b> - Variant array, read only. The image in wireless bitmap format.</p>
+
+<p>The following property is used for import and export .</p>
+
+<a name="BMPHandle"></a><p><b>BMPHandle</b> - Integer. The Windows handle of the image stored in memory. This can be used to exchange 
+images with other COM enabled tools, such as Visual Basic, but it is also an efficient way to pass an image between instances of 
+csImageFile. Reading the property returns the handle to a copy of the image so any modifications done to the exported image do not 
+affect the image in memory.</p>
+
+<p>Example of copying images between instances of csImageFile:</p>
+
+<p class=courier>Image1.BMPHandle = Image2.BMPHandle</p>
+
+<p>This copies the image from an instance called Image2 to the instance called Image1. It does not copy any of the properties, such as <i>DPI</i>, 
+<i>Transparent</i> or any of the metadata. Use <i>ReadVariant</i> with one of the above properties to copy the image and the associated properties.</p>
+
+<a name="sect2.4"></a><p class=title>2.4. TIFF Compression and Multipage Support</p>
+
+<p>This section only applies to TIF files.</p>
+
+<a name="CompressionType"></a><p><b>CompressionType</b> - Integer, must be 0, 1 or 2. This specifies the compression type that will be used when a 
+TIF file is saved. 0 is no compression, 1 is Packbits compression and 2 is Group 4 compression, which can only be used on black and white 
+images. If a colour image is saved as Group 4 (<i>CompressionType</i> = 2) it will be saved with no compression. <i>CompressionType</i> is set 
+when an image is loaded. (Default = 0)</p>
+
+<p><i>CompressionType</i> can also take the values 3 and 4 when a TIF is loaded and these indicate that the original compression was Group 3 and 
+LZW respectively. csImageFile does not save TIFs using these compression types and attempting to do so will result in Group 3 compression saved as 
+Group 4 and LZW compression saved as Packbits.</p>
+
+<p>The TIF format allows for multiple images, or pages, to be saved in a single file. This is most commonly used with black and white images 
+that have been scanned or faxed but it can be used with any TIF images. csImageFile provides functionality to count the number of pages, extract 
+a specified page, or manipulate the pages within the file.</p>
+
+<a name="ImageCount"></a><p><b>ImageCount</b> (<i>FileName</i>) - Integer property, read only. This returns the number of images contained 
+within a file. <i>FileName</i> is a string and must be a complete physical path to the file, including the file extension. Note that reading 
+of multiple images is currently only possible with TIF files, so for other files this function will normally return the value 1. 
+<i>FileName</i> can alternatively be a remote URL, beginning with &quot;http://&quot;.</p>
+
+<a name="ImageCountBinary"></a><p><b>ImageCountBinary</b> (<i>ImageData</i>) - Integer property, read only. This returns the number of images 
+contained within a TIF stored in the variant array variable, <i>ImageData</i>. It could be used when the image is stored in a binary database 
+field or after uploading with our csASPUpload component.</p>
+
+<a name="ReadImageNumber"></a><p><b>ReadImageNumber</b> - Integer property. Specifies the image that will be read from a TIF file or variant 
+array in TIF format containing multiple images. This property is used by the <i>ReadFile</i>, <i>ReadURL</i> and <i>ReadVariant</i> methods, 
+as well as the merge functions. (Default = 1).</p>
+
+<p>Example of reading the last page from a multipage TIF:</p>
+
+<p class=courier>Image.ReadImageNumber = Image.ImageCount(&quot;C:\images\sample.tif&quot;)<br>
+Image.ReadFile &quot;C:\images\sample.tif&quot;</p>
+
+<p>In summary the number of pages is found using <i>ImageCount</i> or <i>ImageCountBinary</i>. The required page is specified by setting 
+the <i>ReadImageNumber</i> property before calling one of the methods that loads an image.</p>
+
+<p>The <i>InsertTIF</i> and <i>DeleteTIF</i> methods are used to manipulate the pages of an existing TIF file that is stored on disk.</p>
+
+<a name="InsertTIF"></a><p><b>InsertTIF</b> <i>Source</i>, <i>Destination</i>, <i>Page</i> - Inserts the image as an additional page into an 
+existing TIF file. The existing file is read from disk, and a new file is saved with the additional image added. The new file can either 
+overwrite the existing one, or be saved with a different name. <i>Source</i> must be a complete path to the existing file, <i>Destination</i> 
+is a complete path to the new file to be created, and <i>Page</i> is the position in the TIF file where the image will be inserted with the 
+first image in the file being <i>Page</i> = 1. <i>Source</i> and <i>Destination</i> are strings, <i>Page</i> is an integer.</p>
+
+<p><i>Source</i> and <i>Destination</i> can be identical, in which case, the existing file is replaced. If <i>Destination</i> is an empty string, 
+the existing file will be replaced. If <i>Source</i> is an empty string or if it cannot be found, <i>Destination</i> will be created new with only 
+the single image. If <i>Page</i> is set to zero, the image will be inserted at the end of the file.</p>
+
+<a name="DeleteTIF"></a><p><b>DeleteTIF</b> <i>Source</i>, <i>Destination</i>, <i>First</i>, <i>Count</i> - Deletes a range of consecutive images 
+from an existing TIF file and saves the file, either overwriting the existing file, or creating a new file. <i>Source</i> must be a complete 
+path to the existing file, Destination is a complete path to the new file to be created, <i>First</i> is the position in the TIF file of the 
+first image to be deleted and <i>Count</i> is the number of images to be deleted. For example, if <i>First</i> is 4 and <i>Count</i> is 3, the 
+images numbered 4, 5 & 6 would be deleted. <i>Source</i> and <i>Destination</i> are strings, <i>First</i> and <i>Count</i> are positive integers. 
+If <i>First</i> and <i>Count</i> are invalid values, no deletion will take place but no error will be generated.</p>
+
+<p><i>Source</i> and <i>Destination</i> can be identical, in which case, the existing file is replaced. If <i>Destination</i> is an empty string, 
+the existing file will be replaced.</p>
+
+<p>The <i>AddToTIF</i> method allows a multipage TIF to be built in memory so that it can be exported as a full file. The pages stored in 
+memory are compressed as specified by <i>CompressionType</i>. A black and white image using Group 4 compression should not take up much memory 
+but using <i>AddToTIF</i> with coloured images can use up large amounts of memory so this function should be used with caution.</p>
+
+<a name="AddToTIF"></a><p><b>AddToTIF</b> <i>Page</i> - Stores the image temporarily in memory as a page which is ready to be written to a TIF 
+file. <i>Page</i> is the number of the page in the TIF file where the image will be saved. If <i>Page</i> is set to zero, the image will be 
+positioned at the end of the file. Any TIF exported by <i>WriteFile</i> or <i>TIFData</i> will include all the pages added by <i>AddToTIF</i>. 
+<i>AddToTIF</i> does not need to be called when working with single page TIFs. <i>Page</i> is an integer.</p>
+
+<a name="ClearTIF"></a><p><b>ClearTIF</b> - Clears all the images from memory that have been stored using <i>AddToTIF</i>.</p>
+
+<a name="sect3"></a><p class=title>3. Image Resize and Manipulation</p>
+
+<a name="sect3.1"></a><p class=title>3.1. Methods for Image Manipulation</p>
+
+<p>The most common type of image manipulation for which csImageFile is used is the resizing of images. Three methods are provided for this, 
+<i>Resize</i>, <i>ResizeFit</i> and <i>Scale</i>.</p>
+
+<a name="Resize"></a><p><b>Resize</b> <i>Width</i>, <i>Height</i> - The current image will be resized to new pixel dimensions <i>Width</i> and 
+<i>Height</i>. If either parameter is zero the other will be used to determine the new size and the aspect ratio will be maintained. <i>Width</i> 
+and <i>Height</i> are integers.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.Resize 100, 0</p>
+
+<p>This resizes the image to 100 pixels wide while maintaining the aspect ratio. In VBScript there are no brackets around method parameters. 
+There is no equals sign because it is a method call.</p>
+
+<a name="ResizeFit"></a><p><b>ResizeFit</b> <i>MaxWidth</i>, <i>MaxHeight</i> - If the current image has a width or height greater than 
+<i>MaxWidth</i> or <i>MaxHeight</i> it will be resized to fit within those dimensions while maintaining aspect ratio. If the image already 
+fits within <i>MaxWidth</i> and <i>MaxHeight</i> it will be unchanged. <i>MaxWidth</i> and <i>MaxHeight</i> are integers.</p>
+
+<a name="Scale"></a><p><b>Scale</b> <i>Factor</i> - The current image will be scaled by <i>Factor</i> percent, where <i>Factor</i> is an integer. 
+Images that are scaled always maintain aspect ratio.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.Scale 50</p>
+
+<p>This scales the current image to 50% of original size. (The width is scaled by 50% and the height is scaled by 50% so the area is reduced 
+to 25% of its original size.)</p>
+
+<a name="NewScale"></a><p><b>NewScale</b> <i>Factor</i> - This is identical to the <i>Scale</i> function and was introduced to avoid a clash of 
+names for Visual Basic users.</p>
+
+<p>The following method, <i>NewImage</i>, is important because it is used to create a blank image which can be used for drawing or writing onto 
+or as a background with one of the merge functions.</p>
+
+<a name="NewImage"></a><p><b>NewImage</b> <i>Width</i>, <i>Height</i>, <i>Color</i> - This loads a blank image into memory, deleting any 
+previously loaded image. It is <i>Width</i> x <i>Height</i> pixels in size and the colour is determined by the <i>Color</i> parameter. 
+<i>ColorDepth</i> is set to 24 after calling <i>NewImage</i>. <i>Width</i> and <i>Height</i> are integers and <i>Color</i> is a 6 character 
+string representing the &quot;RRGGBB&quot; colour value.</p>
+
+<p>The following methods provide simple image manipulation functions.</p>
+
+<a name="Crop"></a><p><b>Crop</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i> - The parts of the rectangle outside the area defined by the 
+opposite corners (<i>X1</i>, <i>Y1</i>) and (<i>X2</i>, <i>Y2</i>) will be removed. Note that coordinates are measured across and down from 
+the top left corner of the image. The parameters are integers.</p>
+
+<p><i>Crop</i> can also be used to increase the area of the image by specifying coordinates that are outside the image. In this case the new 
+area will be the colour of <i>BGColor</i>.</p>
+
+<a name="Rotate"></a><p><b>Rotate</b> <i>Angle</i> - Rotates the image by <i>Angle</i> degrees anticlockwise. If the angle is not a right 
+angle the new image will be centred on a larger rectangle, the colour of which will be defined by the <i>BGColor</i> property. If <i>Resample</i> 
+is true and if the image has a colour depth of 24 bit the image will be smoothed during rotation. <i>Angle</i>is a floating point number.</p>
+
+<a name="FlipX"></a><p><b>FlipX</b> - The image is reflected about an axis parallel to the x-axis running through the centre of the image. 
+The top row of pixels becomes the bottom row and the bottom becomes the top.</p>
+
+<a name="FlipY"></a><p><b>FlipY</b> - The image is reflected about an axis parallel to the y-axis running through the centre of the image. 
+The left column of pixels becomes the right column and the left becomes the right.</p>
+
+<p>The following methods perform image effects and colour adjustments.</p>
+
+<a name="Brightness"></a><p><b>Brightness</b> <i>Value</i> - This adjusts the brightness of the image. <i>Value</i> is an integer between 
+0 and 100 where 0 is very dark, 100 is very bright and 50 is unchanged.</p>
+
+<a name="Contrast"></a><p><b>Contrast</b> <i>Value</i> - This adjusts the contrast of the image. <i>Value</i> is an integer between 0 and 
+100 where 0 is zero contrast, 100 is maximum contrast and 50 is unchanged.</p>
+
+<a name="ColorAdjust"></a><p><b>ColorAdjust</b> <i>Value</i>, <i>Red</i>, <i>Green</i>, <i>Blue</i> - This adjusts the brightness of one 
+or more of the primary colours. <i>Value</i> is an integer between 0 and 100 which describes the adjustment to the brightness. 0 is very 
+dark, 100 is very bright and 50 is unchanged. <i>Red</i>, <i>Green</i> and <i>Blue</i> are Boolean values and specify which colours are 
+adjusted. If all three are true it is identical to the <i>Brightness</i> method. When used after a <i>GrayScale</i> command <i>ColorAdjust</i> 
+produces an image that appears to be viewed through a coloured filter.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.ReadFile &quot;c:\images\photo.jpg&quot;<br>
+Image.Greyscale<br>
+Image.ColorDepth = 24<br>
+Image.ColorAdjust 70, true, true, false</p>
+
+<p>This would give the image a kind of sepia tinge. Two <i>ColorAdjust</i> commands could be used to adjust the colours by different amounts 
+of red and green.</p>
+
+<a name="Sharpen"></a><p><b>Sharpen</b> - Applies a sharpening filter to the image.</p>
+
+<a name="SharpenBy"></a><p><b>SharpenBy</b> <i>Value</i> - Applies a sharpening filter where the amount of sharpening is defined by <i>Value</i>, 
+which is an integer between 1 and 16. 1 is high sharpening, 16 is low and 8 is the same as the <i>Sharpen</i> method.</p>
+
+<a name="Blur"></a><p><b>Blur</b> - Applies a blurring filter to the image.</p>
+
+<a name="BlurBy"></a><p><b>BlurBy</b> <i>Value</i> - Applies a blurring filter where the amount of blurring is defined by <i>Value</i>, which is 
+an integer between 1 and 32. 1 is the most blurring, 32 is the least and 16 is the same as the <i>Blur</i> method.</p>
+
+<a name="GrayScale"></a><p><b>GrayScale</b> - Converts the image to a 256 colour greyscale image. The alternative spelling &quot;GreyScale&quot; 
+is also accepted.</p>
+
+<a name="ConvertToBW"></a><p><b>ConvertToBW</b> - Converts the image to a 2 colour black and white image.</p>
+
+<p>The following functions can convert between OLE_COLOR values and the 6 character strings that csImageFile uses for colours.</p>
+
+<a name="OLEColorToStr"></a><p><b>OLEColorToStr</b>(<i>Color</i>) - This function takes a 4 byte OLE_COLOR value, <i>Color</i>, and returns 
+a 6 character string of the form &quot;RRGGBB&quot;.</p>
+
+<a name="StrToOLEColor"></a><p><b>StrToOLEColor</b>(<i>ColorStr</i>) - This function takes a 6 character string of the form &quot;RRGGBB&quot; 
+and returns a 4 byte OLE_COLOR value.</p>
+
+<a name="sect3.2"></a><p class=title>3.2. Properties for Image Manipulation</p>
+
+<p>The properties listed in this section can be used to control resampling of resized and rotated images.</p>
+
+<a name="Resample"></a><p><b>Resample</b> - Boolean. When true a resampling filter will be applied during an image resize or rotation. The filter 
+used during resizing is specified by the <i>FilterType</i> property. When resampling is used the image will be converted to 24 bit colour.</p>
+
+<p>For image resizing the quality is usually high enough when applied to 24 bit images and <i>Resample</i> does not need to be set. On the NT 
+Server operating system the images can become grainy on resize and setting <i>Resample</i> to true will prevent this.</p>
+
+<p>For rotations using an angle that is not a multiple of 90 degrees the image will develop some jagged edges and setting <i>Resample</i> can 
+reduce this effect.</p>
+
+<a name="FilterType"></a><p><b>FilterType</b> - Integer in the range 1 to 6. Determines the filter algorithm used when the image is resampled 
+during a resize or scale operation (but not for rotations). This filter is also used when drawing shapes or lines with antialiasing or when 
+<i>BlurText</i> is used with the <i>Text</i> method. The values for <i>FilterType</i> are 1 - Bilinear, 2 - Hermite, 3 - Bell, 4 - B-Spline, 
+6 - Mitchell. (Default = 1)</p>
+
+<a name="sect3.3"></a><p class=title>3.3. The Merge Methods and Properties</p>
+
+<p>There are 6 methods available for combining the current image with a second image. <i>MergeFront</i> and <i>MergeBack</i> take the second 
+image from a file stored on disk. <i>MergeFrontBin</i> and <i>MergeBackBin</i> take the second image as a binary data stream which can come 
+from a database or an upload. <i>MergeFrontHDC</i> and <i>MergeBackHDC</i> take the second image as a Windows handle which can come from another 
+instance of the component. The &quot;Front&quot; methods make the current image the foreground and the &quot;Back&quot; methods make the current 
+image the background. The foreground image can be partially transparent by setting the <i>TransPercent</i> property. <i>TransPercent</i> is a 
+percentage, taking a value between 0 and 100 where 0 is fully opaque and 100 is fully transparent (invisible). A single colour in the foreground 
+can be fully transparent by setting the <i>Transparent</i> property to true and setting <i>BGColor</i> to the required colour.</p>
+
+<p>The foreground image can be made to tile over the background by setting the <i>Tile</i> property to true. This ignores the <i>X</i> and 
+<i>Y</i> coordinates and completely covers the background image. It would often be used with some transparency settings to create a watermark.</p>
+
+<p>If the foreground image is 24 bit and the background image uses a palette the result will only contain the colours of the palette. This can 
+be prevented by using the <i>MergeBack</i> method and using <i>ColorDepth</i> to change the paletted image to 24 bit before merging.</p>
+
+<a name="MergeFront"></a><p><b>MergeFront</b> <i>Background</i>, <i>X</i>, <i>Y</i> - <i>Background</i> is the full physical path and filename 
+for another image. The current image in memory is placed onto this background image. The top left corner is <i>X</i> and <i>Y</i> pixels across 
+and down from the top left of the background image. <i>Background</i> is a string, <i>X</i> and <i>Y</i> are integers.</p>
+
+<a name="MergeBack"></a><p><b>MergeBack</b> <i>Foreground</i>, <i>X</i>, <i>Y</i> - <i>Foreground</i> is the full physical path and filename 
+for another image. This foreground image is placed onto the current image. The top left corner is <i>X</i> and <i>Y</i> pixels across and 
+down from the top left of the current image. <i>Foreground</i> is a string, <i>X</i> and <i>Y</i> are integers.</p>
+
+<a name="MergeFrontBin"></a><p><b>MergeFrontBin</b> <i>BackgroundData</i>, <i>ImgType</i>, <i>X</i>, <i>Y</i> - This is the same as the 
+<i>MergeFront</i> command except that it reads the background image from binary data. <i>BackgroundData</i> is a variant array containing 
+another image (see also <i>ReadVariant</i>). The current image in memory is placed onto this background image. The top left corner is <i>X</i> 
+and <i>Y</i> pixels across and down from the top left of the background image. <i>ImgType</i> is a string indicating the format of the 
+background image and it must be one of &quot;jpg&quot;, &quot;gif&quot;, &quot;bmp&quot;, &quot;png&quot;, &quot;psd&quot;, &quot;pcx&quot;, 
+&quot;tif&quot;, &quot;wbmp&quot;. Version 5 will also accept an empty string for <i>ImgType</i> and it will use the image if it is a 
+supported format. <i>X</i> and <i>Y</i> are integers.</p>
+
+<p>Example:</p>
+
+<p class=courier>FileData = RS(&quot;ImageField&quot;)<br>
+Image.MergeFrontBin FileData, &quot;jpg&quot;, 25, 50</p>
+
+<p>This places the current image onto another JPG image read from a database field. The top left corner of the current image will be at coordinates 
+25, 50 on the background image.</p>
+
+<a name="MergeBackBin"></a><p><b>MergeBackBin</b> <i>ForegroundData</i>, <i>ImgType</i>, <i>X</i>, <i>Y</i> - This is the same as the 
+<i>MergeBack</i> method except it reads the foreground image from binary data. <i>ForegroundData</i> is a variant array containing another image 
+(see also <i>ReadVariant</i>). This image is placed on top of the current image. The top left corner is <i>X</i> and <i>Y</i> pixels across and 
+down from the top left of the current image. <i>ImgType</i> is a string indicating the format of the background image and it must be one of 
+&quot;jpg&quot;, &quot;gif&quot;, &quot;bmp&quot;, &quot;png&quot;, &quot;psd&quot;, &quot;pcx&quot;, &quot;tif&quot;, &quot;wbmp&quot;. Version 
+5 will also accept an empty string for <i>ImgType</i> and it will use the image if it is a supported format. <i>X</i> and <i>Y</i> are integers.</p>
+
+<a name="MergeFrontHDC"></a><p><b>MergeFrontHDC</b> <i>BackgroundHandle</i>, <i>X</i>, <i>Y</i> - This is the same as the <i>MergeFront</i> method 
+except that it reads the background image from a Windows bitmap handle. The current image is placed onto this background image. The top left 
+corner is <i>X</i> and <i>Y</i> pixels across and down from the top left of the background image.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image1.MergeFrontHDC Image2.BMPHandle, 25, 50</p>
+
+<p>This places the image stored in the first instance of csImageFile (Image1) onto an image stored in a second instance of csImageFile 
+(Image2). The top left corner of the first image will be at coordinates 25, 50 on the second image. Note that the resulting image is 
+stored in Image1 and the image in Image2 is unchanged.</p>
+
+<a name=""></a><p><b>MergeBackHDC</b> <i>ForegroundHandle</i>, <i>X</i>, <i>Y</i> - This is the same as the <i>MergeBack</i> method except 
+that it reads the foreground image from a Windows bitmap handle. This image is placed on top of the current image. The top left corner is 
+<i>X</i> and <i>Y</i> ixels across and down from the top left of the current image.</p>
+
+<p>The following properties affect image merging.</p>
+
+<a name="TransPercent"></a><p><b>TransPercent</b> - Floating point number between 0 and 100. When images are merged this specifies the 
+percentage transparency of the foreground image. By setting this to a high value a watermark is produced. The background image needs to 
+be 24 bit colour for this to be effective.</p>
+
+<a name="Tile"></a><p><b>Tile</b> - Boolean. Used with the merge functions. When true the foreground image is tiled to fill the background 
+and the coordinates are ignored. (Default = false)</p>
+
+<a name="sect4"></a><p class=title>4. Drawing on the Image</p>
+
+<p>Lines and shapes can be drawn on the image. Shapes and areas can be filled with a choice of simple fill patterns. The colour and thickness 
+of lines is defined by the pen properties, <i>PenColor</i>, <i>PenThickness</i> and <i>PenStyle</i>. The fill colour and patterns are 
+defined by the brush properties, <i>BrushColor</i> and <i>BrushStyle</i>. Individual pixels can be read or written to using the <i>Pixel</i> 
+property. An image must be loaded, or created with <i>NewImage</i>, before any of these functions can be used.</p>
+
+<p>All coordinate parameters are integers.</p>
+
+<a name="sect4.1"></a><p class=title>4.1. Methods for Drawing</p>
+
+<a name="Arc"></a><p><b>Arc</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i>, <i>X4</i>, <i>Y4</i> - Draws an elliptically 
+curved line the colour of <i>PenColor</i>. The arc follows the perimeter of the ellipse bounded by (<i>X1</i>, <i>Y1</i>) and (<i>X2</i>, <i>Y2</i>), 
+and moves anticlockwise from the start point to the end point. The start point is defined by the intersection of the ellipse with a line 
+drawn from the centre to the point (<i>X3</i>, <i>Y3</i>). The end point is defined by the intersection of the ellipse with a line drawn 
+from the centre to the point (<i>X4</i>, <i>Y4</i>).</p>
+
+<a name="Arc3XY"></a><p><b>Arc3XY</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i> - Draws a an arc which traverses the 
+perimeter of a circle between the points (<i>X1</i>, <i>Y1</i>) and (<i>X2</i>, <i>Y2</i>), passing through (<i>X3</i>, <i>Y3</i>). The shape 
+is filled using the pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="Chord"></a><p><b>Chord</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i>, <i>X4</i>, <i>Y4</i> - Draws a shape 
+bounded by an arc and a line that joins the endpoints of the arc. The arc is an elliptically curved line that follows the perimeter of the 
+ellipse bounded by (<i>X1</i>, <i>Y1</i>) and (<i>X2</i>, <i>Y2</i>), and moves anticlockwise from the start point to the end point. The 
+start point is defined by the intersection of the ellipse with a line drawn from the centre to the point (<i>X3</i>, <i>Y3</i>). The end 
+point is defined by the intersection of the ellipse with a line drawn from the centre to the point (<i>X4</i>, <i>Y4</i>). The shape is 
+filled using the pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="Ellipse"></a><p><b>Ellipse</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i> - Draws a circle or ellipse that fits into the rectangle 
+defined by the top left corner (<i>X1</i>, <i>Y1</i>) and the bottom right corner (<i>X2</i>, <i>Y2</i>). The shape is filled using the 
+pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="Circle3XY"></a><p><b>Circle3XY</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i> - Draws a circle which passes 
+through the points (<i>X1</i>, <i>Y1</i>), (<i>X2</i>, <i>Y2</i>) and (<i>X3</i>, <i>Y3</i>). The shape is filled using the pattern defined by 
+<i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="CircleCR"></a><p><b>CircleCR</b> <i>X</i>, <i>Y</i>, <i>R</i> - Draws a circle with centre (<i>X</i>, <i>Y</i>) and radius <i>R</i>. 
+The shape is filled using the pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="Pie"></a><p><b>Pie</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i>, <i>X4</i>, <i>Y4</i> - Draws a pie shaped 
+wedge defined by an arc of an ellipse and lines joining the ends of the arc with the centre of the ellipse. The arc follows the perimeter 
+of the ellipse bounded by (<i>X1</i>, <i>Y1</i>) and (<i>X2</i>, <i>Y2</i>), and moves anticlockwise from the start point to the end point. 
+The start point is defined by the intersection of the ellipse with a line drawn from the centre to the point (<i>X3</i>, <i>Y3</i>). The end 
+point is defined by the intersection of the ellipse with a line drawn from the centre to the point (<i>X4</i>, <i>Y4</i>). The shape is filled 
+using the pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>.</p>
+
+<a name="Rectangle"></a><p><b>Rectangle</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i> - Draws a rectangle defined by the top left corner 
+(<i>X1</i>, <i>Y1</i>) and the bottom right corner (<i>X2</i>, <i>Y2</i>). The shape is filled using the pattern defined by <i>BrushStyle</i> and 
+the colour defined by <i>BrushColor</i>.</p>
+
+<a name="RoundRect"></a><p><b>RoundRect</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i>, <i>X3</i>, <i>Y3</i> - Draws a rectangle defined by 
+the top left corner (<i>X1</i>, <i>Y1</i>) and the bottom right corner (<i>X2</i>, <i>Y2</i>). The corners will be rounded with a curve 
+matching an ellipse with width <i>X3</i> and height <i>Y3</i>. The shape is filled using the pattern defined by <i>BrushStyle</i> and the 
+colour defined by <i>BrushColor</i>.</p>
+
+<a name="Line"></a><p><b>Line</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i> - Draws a line from point (<i>X1</i>, <i>Y1</i>) up to but not 
+including the point (<i>X2</i>, <i>Y2</i>). The style, colour and width of the line are determined by the properties <i>PenStyle</i>, 
+<i>PenColor</i> and <i>PenThickness</i>.</p>
+
+<a name="DrawLine"></a><p><b>DrawLine</b> <i>X1</i>, <i>Y1</i>, <i>X2</i>, <i>Y2</i> - Alternative name for the <i>Line</i> method for Visual 
+Basic users.</p>
+
+<a name="FloodFill"></a><p><b>FloodFill</b> <i>X</i>, <i>Y</i> - Fills an area on the current image with <i>BrushColor</i> spreading outward 
+from the point (<i>X</i>, <i>Y</i>) until a different colour is reached. All the pixels filled will have the same original colour as the 
+pixel at (<i>X</i>, <i>Y</i>).</p>
+
+<a name="FillToBorder"></a><p><b>FillToBorder</b> <i>X</i>, <i>Y</i>, <i>Color</i> - Fills an area on the current image with <i>BrushColor</i> 
+spreading outward from the point (<i>X</i>, <i>Y</i>) until a boundary of <i>Color</i> is reached. <i>Color</i> must be a 6 character 
+string representing the hexadecimal &quot;RRGGBB&quot; value.</p>
+
+<a name="PointAdd"></a><p><b>PointAdd</b> <i>X</i>, <i>Y</i> - Adds a point to use as a vertex by the <i>Polygon</i> method.</p>
+
+<a name="Polygon"></a><p><b>Polygon</b> - Draws a polygon using the points added by <i>PointAdd</i> as vertices. The shape is filled using the 
+pattern defined by <i>BrushStyle</i> and the colour defined by <i>BrushColor</i>. The points stored by <i>PointAdd</i> are cleared after the 
+polygon is drawn.</p>
+
+<a name="BezierPointAdd"></a><p><b>BezierPointAdd</b> <i>X</i>, <i>Y</i> - Adds a point to be used by the <i>PolyBezier</i> method.</p>
+
+<a name="PolyBezier"></a><p><b>PolyBezier</b> - Draws a set of cubic Bezier curves using the points added by <i>BezierPointAdd</i>. The first 
+curve is drawn from the first point to the fourth point, using the second and third points as control points. Each subsequent curve in the 
+sequence requires exactly three more points. The ending point of the previous curve is used as the starting point, the next two points in 
+the sequence are control points and the third is the ending point. The style, colour and width of the line are determined by the properties 
+<i>PenStyle</i>, <i>PenColor</i> and <i>PenThickness</i>. The points stored by <i>BezierPointAdd</i> are cleared after calling <i>PolyBezier</i>. 
+The <i>Antialias</i> property does not apply to lines drawn with <i>PolyBezier</i>.</p>
+
+<a name="SetBitmapBrush"></a><p><b>SetBitmapBrush</b> <i>Path</i> - Sets a bitmap to be the pattern used for filling shapes. The bitmap used is 
+defined by <i>Path</i> which is the physical path and filename for the file. This will override the <i>BrushStyle</i> and <i>BrushColor</i> settings.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.SetBitmapBrush &quot;C:\images\pattern.bmp&quot;<br>
+Image.Rectangle 10, 10, 50, 50</p>
+
+<p>This will draw a rectangle and fill it with the image &quot;pattern.bmp&quot;. If this is smaller than the rectangle it will be tiled.</p>
+
+<a name="SetBitmapBrushHandle"></a><p><b>SetBitmapBrushHandle</b> <i>Handle</i> - Sets a bitmap to be the pattern used for filling shapes. 
+The bitmap is defined by its Windows handle, <i>Handle</i>, which is an integer value. This could be used with the <i>BMPHandle</i> 
+property to get the pattern from another instance of csImageFile. The <i>BrushStyle</i> and <i>BrushColor</i> properties are overridden.</p>
+
+<a name="ClearBitmapBrush"></a><p><b>ClearBitmapBrush</b> - This removes any bitmap that was used as a fill pattern and reverts back to using 
+<i>BrushStyle</i> and <i>BrushColor</i>.</p>
+
+<p>Note that using a bitmap as the fill pattern will not work adequately for full colour pattern images unless the server is running in a 
+full colour mode.</p>
+
+<a name="sect4.2"></a><p class=title>4.2. Properties for Drawing</p>
+
+<p>The pen and brush properties are used to define the lines and filled shapes from the previous section.</p>
+
+<a name="PenColor"></a><p><b>PenColor</b> - String. The colour used for drawing lines and the outlines of shapes. This is a 6 character 
+string of the form &quot;RRGGBB&quot;. (Default = &quot;000000&quot;, black)</p>
+
+<a name="PenThickness"></a><p><b>PenThickness</b> - Integer. The width in pixels for lines and shape outlines. Line widths greater than one 
+are only shown for solid pen styles. (Default = 1)</p>
+
+<a name="PenStyle"></a><p><b>PenStyle</b> - Integer in the range 0 to 5. This determines the pattern used to draw a line or shape outline. 
+Use Clear (<i>PenStyle</i> = 5) when the outline is not required on filled shapes. (Default = 0, solid)</p>
+
+  <TABLE align=center CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=396>
+    <TR> 
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">0
+      </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P>Solid
+        </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">3
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51>DashDot</TD>
+    </TR>
+    <TR> 
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">1
+      </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51>
+        <P>Dash
+        </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">4
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51>DashDotDot</TD>
+    </TR>
+    <TR> 
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">2</P>
+      </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P>Dot
+        </TD>
+      <TD WIDTH="31%" VALIGN="MIDDLE" HEIGHT=51> 
+        <P align="center">5
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=51>Clear</TD>
+    </TR>
+  </TABLE>
+
+<a name="BrushColor"></a><p><b>BrushColor</b> - String. The colour used for filling shapes when the <i>BrushStyle</i> is not clear. This is 
+a 6 character string of the form &quot;RRGGBB&quot;. (Default = &quot;FFFFFF&quot;, white)</p>
+
+<a name="BrushStyle"></a><p><b>BrushStyle</b> - Integer in the range 0 to 7. <i>BrushStyle</i> determines the pattern used when filling shapes. 
+The fill pattern is the same colour as <i>BrushColor</i>. Use Clear (<i>BrushStyle</i> = 1) when no fill is required. (Default = 1, clear)</p>
+
+  <TABLE align=center CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=396>
+    <TR> 
+      <TD WIDTH="25%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">0
+      </TD>
+      <TD WIDTH="22%" VALIGN="MIDDLE" HEIGHT=6>Solid</TD>
+      <TD WIDTH="33%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">4
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=6>Cross</TD>
+    </TR>
+    <TR> 
+      <TD WIDTH="25%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">1
+      </TD>
+      <TD WIDTH="22%" VALIGN="MIDDLE" HEIGHT=6>Clear</TD>
+      <TD WIDTH="33%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">5
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=6>DiagCross</TD>
+    </TR>
+    <TR> 
+      <TD WIDTH="25%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">2
+      </TD>
+      <TD WIDTH="22%" VALIGN="MIDDLE" HEIGHT=6>BDiagonal</TD>
+      <TD WIDTH="33%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">6
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=6>Horizontal</TD>
+    </TR>
+    <TR> 
+      <TD WIDTH="25%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">3
+      </TD>
+      <TD WIDTH="22%" VALIGN="MIDDLE" HEIGHT=6>FDiagonal</TD>
+      <TD WIDTH="33%" VALIGN="MIDDLE" HEIGHT=6> 
+        <P align="center">7
+      </TD>
+      <TD WIDTH="19%" VALIGN="MIDDLE" HEIGHT=6>Vertical</TD>
+    </TR>
+  </TABLE>
+
+<p>The <i>Pixel</i> property allows access to read or set the colour of individual pixels.</p>
+
+<a name="Pixel"></a><p><b>Pixel</b>(<i>X</i>, <i>Y</i>) - String. The colour of the pixel at (<i>X</i>, <i>Y</i>) as a 6 character hexadecimal 
+string. <i>X</i> and <i>Y</i> are integers.</p>
+
+<p>Example 1:</p>
+
+<p class=courier>Image.Pixel(10, 10) = &quot;000000&quot;</p>
+
+<p>This makes the pixel at (10, 10) black.</p>
+
+<p>Example 2:</p>
+
+<p class=courier>Image.BGColor = Image.Pixel(0,0)</p>
+
+<p>This sets the <i>BGColor</i> property to the same colour as the pixel at the top left of the image.</p>
+
+<p>Avoid filling large areas of an image by using <i>Pixel</i> in a loop because it is not particularly fast.</p>
+
+<a name="Antialias"></a><p><b>Antialias</b> - Boolean. When true, text, lines or shapes drawn will be antialiased. (Default = false)</p>
+
+<p>In the case of text it will only appear antialiased if the font is large enough or small enough to support it and if the image is 24 bit 
+colour depth. If necessary the <i>ColorDepth</i> property should be set to 24 before drawing the text. If the computer running csImageFile 
+has the display properties set to smooth screen fonts this will overrule the <i>Antialias</i> property and text will be antialiased even when 
+the property is false. There is an alternative type of text antialiasing provided by the <i>BlurText</i> property, described in the next section.</p>
+
+<p>For lines and shapes the exact appearance will be controlled by the value of the <i>FilterType</i> property and setting this to 3 or 4 will 
+give a smoother appearance. Drawing an antialiased line or shape will automatically convert the image to 24 bit colour depth.</p>
+
+<a name="sect5"></a><p class=title>5. Adding Text to an Image</p>
+
+<p>Text can be placed on the current image using the <i>Text</i> method. Properties are available to control the font, style, size, colour and 
+angle of rotation. Unicode characters can be used if the font supports them. Carriage returns can be placed in the string to allow the text to 
+span multiple lines and there is a choice of justification options for this multi-line text.</p>
+
+<p>Two methods of antialiasing are available. Setting the <i>Antialias</i> property to true enables Windows font smoothing. This requires the 
+text to be above a certain size before antialiasing takes place, for example the Arial font does not antialias until the size is at least 18. 
+Setting <i>BlurText</i> to true uses a resampling filter to blend the text with the background. This applies to all text sizes and fonts but 
+the results are not as clear as when using the <i>Antialias</i> property. Either method should be avoided if the image is to be exported as a 
+GIF with background transparency because the antialiased pixels are not the same colour as the background and are therefore visible.</i>
+
+<a name="Text"></a><p><b>Text</b> <i>X</i>, <i>Y</i>, <i>TextString</i> - This places a string of text onto the image. The string is <i>TextString</i>, 
+and the top left corner of the text is positioned at the point (<i>X</i>, <i>Y</i>). The text will break onto the next line if the string contains 
+a carriage return, line feed or CRLF pair (in VBScript the constant vbCRLF can be used). Unicode characters will be displayed if the font specified 
+by <i>TextFont</i> supports them. <i>X</i> and <i>Y</i> are integers, <i>TextString</i> is a string.</p>
+
+<a name="TextFont"></a><p><b>TextFont</b> - String. The name of the font to be used. It defaults to the system font for the server and this 
+font will be used if <i>TextFont</i> specifies an unavailable font. Note that if a font is installed on a remote server using Terminal Services, 
+the server must be rebooted before csImageFile will be able to use the font.</p>
+
+<a name="TextColor"></a><p><b>TextColor</b> - String. The colour of the text as a 6 character string. (Default = &quot;000000&quot;, black)</p>
+
+<a name="TextSize"></a><p><b>TextSize</b> - Integer. The height of the text in pixels. (Default = 16)</p>
+
+<a name="TextBG"></a><p><b>TextBG</b> - String. The colour of the text background as a 6 character string. (Default = &quot;FFFFFF&quot;, white)</p>
+
+<a name="TextOpaque"></a><p><b>TextOpaque</b> - Boolean. When true the text is drawn on a background the colour of <i>TextBG</i>. When false 
+the background is transparent. (Default = true).</p>
+
+<a name="TextBold"></a><p><b>TextBold</b>, <a name="TextItalic"></a><b>TextItalic</b>, <a name="TextUnderline"></a><b>TextUnderline</b>, 
+<a name="TextStrikeout"></a><b>TextStrikeout</b> - Boolean values to set text styles. All default to false.</p>
+
+<a name="TextAngle"></a><p><b>TextAngle</b> - Integer. The angle of rotation of the text, in degrees, measured anticlockwise from the horizontal. 
+Only true type fonts can be drawn rotated. (Default = 0)</p>
+
+<a name="TextJustify"></a><p><b>TextJustify</b> - Integer, must be 0, 1 or 2. This applies to text containing carriage returns and determines 
+the justification. Text on a single line is not affected. 0 - Left, 1 - Centre, 2 - Right. (Default = 0, Left)</p>
+
+<p>Text example:</p>
+
+<p class=courier>Image.TextSize = 20<br>
+Image.TextBold = true<br>
+Image.TextFont = &quot;Arial&quot;<br>
+Image.TextOpaque = false<br>
+Image.Text 100, 50, &quot;Some Text&quot;</p>
+
+<p>This sets the size and the font and sets the style to bold before drawing some text at coordinates (100, 50). <i>TextOpaque</i> is set to 
+false so that the text background is transparent. Note that the text properties require an equals sign to assign a value but <i>Text</i> is a 
+method and does not use an equals sign.</p>
+
+<a name="BlurText"></a><p><b>BlurText</b> - Boolean. When true, a resampling filter is applied to the text to soften the edges. The filter 
+used is determined by the <i>FilterType</i> property. It will overrule the <i>Antialias</i> property. This effect is identical to the antialiased 
+text used by csImageFile before version 4.4. (Default = false)</p>
+
+<a name="FontNames"></a><p><b>FontNames</b> - Collection. This returns a list of all the fonts installed on the server in alphabetical order. It 
+is a collection and so it can be accessed using For..Each. <i>FontName.Count</i> returns the total number of fonts available, and 
+<i>FontNames.Item(X)</i> returns the name of the font at position <i>X</i> in the list.</p>
+
+<p>Example:</p>
+
+<p class=courier>For Each Font in Image.FontNames<br>
+&nbsp;&nbsp;Response.Write Font &amp; &quot;&lt;br&gt;&quot;<br>
+Next</p>
+
+<p>This will list all the fonts installed on the server.</p>
+
+<p>The <i>TextHeight</i> and <i>TextWidth</i> functions return the height and width of a text string. This can be useful when positioning an item 
+of text because the <i>X</i> and <i>Y</i> parameters of the <i>Text</i> method always set the top left corner of the text.</p>
+
+<a name="TextHeight"></a><p><b>TextHeight</b>(<i>Text</i>) - Integer return value. This returns the height in pixels if the string <i>Text</i> 
+is to be drawn using the current font and size settings.</p>
+
+<a name="TextWidth"></a><p><b>TextWidth</b>(<i>Text</i>) - Integer return value. This returns the width in pixels if the string <i>Text</i> 
+is to be drawn using the current font and size settings.</p>
+
+<p>Text can be made to span multiple lines by adding carriage returns to the string in the <i>Text</i> method. Alternatively, text can be made 
+to fit into a rectangle. Text drawn in this way does not recognise the <i>TextJustify</i> property.</p>
+
+<a name="TextWrap"></a><p><b>TextWrap</b> - Boolean. When true the text will wrap onto multiple lines depending on the length and the values 
+of the <i>TextRectX</i> and <i>TextRectY</i> properties. The line will only break at a space between characters and it will always be 
+left justified. (Default = false)</p>
+
+<a name="TextRectX"></a><p><b>TextRectX</b> - Integer. When <i>TextWrap</i> is true <i>TextRectX</i> is the width of the rectangle containing 
+the text, in pixels. If zero, the text will extend to the right of the image before wrapping to the next line. (Default = 0)</p>
+
+<a name="TextRectY"></a><p><b>TextRectY</b> - Integer. When <i>TextWrap</i> is true <i>TextRectY</i> is the height of the rectangle containing 
+the text in pixels. If zero, the text will fill as many lines as required up to the height of the image. (Default = 0)</p>
+
+<a name="sect6"></a><p class=title>6. IPTC Text / File Info</p>
+
+<p>The JPEG file format allows for additional data to be embedded in the file header and this is called meta data. One type of JPEG meta data 
+is IPTC text (the initials stand for the International Press Telecommunications Council), which is a range of text fields that describe the 
+image. csImageFile exposes each of these fields as properties for reading and writing. Adobe Photoshop supports some of these properties and 
+refers to them as File Info and we have also used this terminology and our IPTC methods and properties are prefixed with &quot;FFO_&quot;.</p>
+
+<p>The <i>HasFileInfo</i> property indicates whether the current image contains File Info. It is set when an image is loaded. It is set to 
+true if any FFO_ properties are written to, and set to clear if they are removed by calling the <i>FFO_Clear</i> method.</p>
+
+<p>The File Info properties can be read from or written to a separate file, either the older .FFO format or the newer XML based .XMP format.</p>
+
+<p>Although IPTC text is most commonly used with JPEGs because it is aimed at digital photographs, the PSD and TIF formats also support it.</p>
+
+<a name="sect6.1"></a><p class=title>6.1. IPTC / File Info Properties</p>
+
+<a name="HasFileInfo"></a><p><b>HasFileInfo</b> - Boolean. When an image is loaded that contains File Info this property is set to true. 
+Setting any File Info property will set <i>HasFileInfo</i> to true. To remove the File Info from an image use the <i>FFO_Clear method</i>, 
+which also sets <i>HasFileInfo</i> to false. (Default = false)</p>
+
+<p>These properties are the IPTC / File Info fields.</p>
+
+<a name="FFO_Caption"></a><p><b>FFO_Caption</b> - String.<br>
+<a name="FFO_CaptionWriter"></a><b>FFO_CaptionWriter</b> - String.<br>
+<a name="FFO_Headline"></a><b>FFO_Headline</b> - String.<br>
+<a name="FFO_SpecialInstructions"></a><b>FFO_Specialinstructions</b> - String.<br>
+<a name="FFO_Category"></a><b>FFO_Category</b> - String.<br>
+<a name="FFO_Byline"></a><b>FFO_Byline</b> - String.<br>
+<a name="FFO_BylineTitle"></a><b>FFO_BylineTitle</b> - String.<br>
+<a name="FFO_Credit"></a><b>FFO_Credit</b> - String.<br>
+<a name="FFO_Source"></a><b>FFO_Source</b> - String.<br>
+<a name="FFO_ObjectName"></a><b>FFO_ObjectName</b> - String.<br>
+<a name="FFO_City"></a><b>FFO_City</b> - String.<br>
+<a name="FFO_ProvinceState"></a><b>FFO_ProvinceState</b> - String.<br>
+<a name="FFO_CountryName"></a><b>FFO_CountryName</b> - String.<br>
+<a name="FFO_OTR"></a><b>FFO_OTR</b> - String. (Original Transmission Reference)<br>
+<a name="FFO_CopyrightNotice"></a><b>FFO_CopyrightNotice</b> - String.<br>
+<a name="FFO_ImageURL"></a><b>FFO_ImageURL</b> - String.<br>
+<a name="FFO_Urgency"></a><b>FFO_Urgency</b> - Integer in the range 0 - 7. Not saved/empty if set to 0.<br>
+<a name="FFO_DateCreated"></a><b>FFO_DateCreated</b> - Date.<br>
+<a name="FFO_CopyrightFlag"></a><b>FFO_CopyrightFlag</b> - Boolean.</p>
+
+<p>The following three properties are aliases of properties shown above. They reflect the fact that Adobe Photoshop 7 uses different 
+property names from previous versions.</p>
+
+<a name="FFO_Title"></a><p><b>FFO_Title</b> - String. Alias of <i>FFO_ObjectName</i>.<br>
+<a name="FFO_Author"></a><b>FFO_Author</b> - String. Alias of <i>FFO_Byline</i>.<br>
+<a name="FFO_AuthorsPosition"></a><b>FFO_AuthorsPosition</b> - String. Alias of <i>FFO_BylineTitle</i>.</p>
+
+<p>Setting one property value also sets the corresponding alias property, so <i>FFO_Title</i> will always have the same value as <i>FFO_ObjectName</i>.</p>
+
+<p>The following property extends the copyright status to work with Adobe Photoshop 7 where 3 copyright states are possible, 
+&quot;Copyrighted Work&quot;, &quot;Public Domain&quot; and &quot;Unmarked&quot;.</p>
+
+<a name="FFO_Marked"></a><p><b>FFO_Marked</b> - Boolean. Defaults to true.</p>
+
+<p>&quot;Copyrighted Work&quot; corresponds to <i>FFO_CopyrightFlag</i> = true and <i>FFO_Marked</i> = true.<br>
+&quot;Public Domain&quot; corresponds to <i>FFO_Marked</i> = false and either value for <i>FFO_CopyrightFlag</i>.<br>
+&quot;Unmarked&quot; corresponds to <i>FFO_CopyrightFlag</i> = false and <i>FFO_Marked</i> = true.</p>
+
+<p>In .xmp files these values are interpreted slightly differently:</p>
+
+<p>&quot;Copyrighted Work&quot; corresponds to <i>FFO_CopyrightFlag</i> = true and either value for <i>FFO_Marked</i>.<br>
+&quot;Public Domain&quot; corresponds to <i>FFO_Marked</i> = false and <i>FFO_Marked</i> = true.<br>
+&quot;Unmarked&quot; corresponds to <i>FFO_CopyrightFlag</i> = false and <i>FFO_Marked</i> = true.</p>
+
+<p>The Keywords and Supplemental Categories properties are zero based arrays of strings. Some additional properties and methods are 
+needed to read and write them.</p>
+
+<a name="FFO_Keywords"></a><p><b>FFO_Keywords</b>(<i>Index</i>) - String. The keyword defined by the integer <i>Index</i>.<br>
+<a name="FFO_KeywordsCount"></a><b>FFO_KeywordsCount</b> - Integer, read only. The number of items in the list.<br>
+<a name="FFO_KeywordsAdd"></a><b>FFO_KeywordsAdd</b> <i>Keyword</i> - Adds the string <i>Keyword</i> to the end of the list. Returns the 
+new number of items in the list as an integer.<br>
+<a name="FFO_KeywordsDelete"></a><b>FFO_KeywordsDelete</b> <i>Index</i> - Deletes the keyword defined by the integer <i>Index</i>.<br>
+<a name="FFO_KeywordsInsert"></a><b>FFO_KeywordsInsert</b> <i>Index</i>, <i>Keyword</i> - Inserts the string <i>Keyword</i> at position 
+<i>Index</i> in the list. <i>Index</i> is an integer.<br>
+<a name="FFO_KeywordsClear"></a><b>FFO_KeywordsClear</b> - Deletes all the keywords.</p>
+
+<a name="FFO_SuppCat"></a><p><b>FFO_SuppCat</b>(<i>Index</i>) - String. The category defined by the integer <i>Index</i>.<br>
+<a name="FFO_SuppCatCount"></a><b>FFO_ SuppCatCount</b> - Integer, read only. The number of items in the list.<br>
+<a name="FFO_SuppCatAdd"></a><b>FFO_ SuppCatAdd</b> <i>Cat</i> - Adds the string <i>Cat</i> to the end of the list. Returns the new 
+number of items in the list as an integer.<br>
+<a name="FFO_SuppCatDelete"></a><b>FFO_ SuppCatDelete</b> <i>Index</i> - Deletes the category defined by the integer <i>Index</i>.<br>
+<a name="FFO_SuppCatInsert"></a><b>FFO_ SuppCatInsert</b> <i>Index</i>, <i>Cat</i> - Inserts the string <i>Cat</i> at position <i>Index</i> 
+in the list. <i>Index</i> is an integer.<br>
+<a name="FFO_SuppCatClear"></a><b>FFO_ SuppCatClear</b> - Deletes all the categories.</p>
+
+<p>Version 4.3 of csImageFile introduced support for more IPTC fields. These are shown separately as fewer software packages support these fields.</p>
+
+<a name="FFO_EditStatus"></a><p><b>FFO_EditStatus</b> - String.<br>
+<a name="FFO_FixtureIdentifier"></a><b>FFO_FixtureIdentifier</b> - String.<br>
+<a name="FFO_DateReleased"></a><b>FFO_DateReleased</b> - Date.<br>
+<a name="FFO_TimeReleased"></a><b>FFO_TimeReleased</b> - Date.<br>
+<a name="FFO_ReferenceService"></a><b>FFO_ReferenceService</b> - String.<br>
+<a name="FFO_ReferenceDate"></a><b>FFO_ReferenceDate</b> - Date.<br>
+<a name="FFO_ReferenceNumber"></a><b>FFO_ReferenceNumber</b> - String.<br>
+<a name="FFO_TimeCreated"></a><b>FFO_TimeCreated</b> - Date.<br>
+<a name="FFO_OriginatingProgram"></a><b>FFO_OriginatingProgram</b> - String.<br>
+<a name="FFO_ProgramVersion"></a><b>FFO_ProgramVersion</b> - String.<br>
+<a name="FFO_ObjectCycle"></a><b>FFO_ObjectCycle</b> - String.<br>
+<a name="FFO_Sublocation"></a><b>FFO_Sublocation</b> - String.<br>
+<a name="FFO_CountryCode"></a><b>FFO_CountryCode</b> - String.<br>
+<a name="FFO_LocalCaption"></a><b>FFO_LocalCaption</b> - String.<br>
+<a name="FFO_CustomField1"></a><b>FFO_CustomField1</b> - String.<br>
+<a name="FFO_CustomField2"></a><b>FFO_CustomField2</b> - String.<br>
+&nbsp;&nbsp;There are 20 custom fields in total.<br>
+<a name="FFO_CustomField19"></a><b>FFO_CustomField19</b> - String.<br>
+<a name="FFO_CustomField20"></a><b>FFO_CustomField20</b> - String.<br>
+<a name="FFO_ImageNotes"></a><b>FFO_ImageNotes</b> - String.</p>
+
+<a name="sect6.2"></a><p class=title>6.2. IPTC / File Info Methods</p>
+
+<a name="FFO_Clear"></a><p><b>FFO_Clear</b> - Deletes all IPTC / File Info values and sets <i>HasFileInfo</i> to false.</p>
+
+<a name="FFO_Save"></a><p><b>FFO_Save</b> <i>FileName</i> - Writes the File Info data to a file. <i>FileName</i> is the physical path and 
+file name, complete with extension. The extension must be either .ffo or .xmp and this determines the format used. <i>FileName</i> is a string.</p>
+
+<a name="FFO_Load"></a><p><b>FFO_Load</b> <i>FileName</i> - Loads File Info data from a file. <i>FileName</i> is the physical path and 
+file name, complete with extension. The file must be either FFO or XMP format. <i>FileName</i> is a string.</p>
+
+<a name="OverwriteMetaData"></a><p><b>OverwriteMetaData</b> <i>FileName</i> - This writes the File Info and Exif data of the current image to 
+the JPG file specified by <i>FileName</i>. It leaves the image part of <i>FileName</i> unchanged and so prevents the loss caused by 
+recompressing the image. It must only be used if <i>FileName</i> is a JPG file. For TIF and PSD files, save the file using <i>WriteFile</i>. 
+<i>FileName</i> is a string.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.ReadFile &quot;C:\directory\image.jpg&quot;<br>
+Image.FFO_Caption = &quot;New Caption&quot;<br>
+Image.OverwriteMetaData &quot;C:\directory\image.jpg&quot;</p>
+
+<p>This will change the Caption property of the image and modify it on disk without changing the image data. It will lose 
+any meta data that is not supported by csImageFile.</p>
+
+<a name="sect7"></a><p class=title>7. EXIF Attributes</p>
+
+<p>Another form of meta data that can be stored inside JPEG files are EXIF attributes (Exchangeable Image File Format). These are 
+typically recorded by a digital camera at the time the image is created and many of them describe the camera and its configuration. 
+csImageFile will preserve this data when a JPG image is saved, unless it is specifically cleared by calling the <i>ExifClear</i> method.</p>
+
+<p>The Exif attributes (or tags) can be read, written or deleted using csImageFile. As there are over 100 different attributes we have not 
+provided a property for each, in the way we have with IPTC text. Instead the attributes are held in an indexed array as strings. Each 
+attribute can be accessed by its index in this array, or by name. Attributes can be written using the attribute name, which is not case sensitive.</p>
+
+<p>csImageFile only supports reading and writing Exif attributes with JPEG files. TIF files can also contain Exif attributes but the 
+current version of csImageFile does not read or write them.</p>
+
+<a name="sect7.1"></a><p class=title>7.1. Reading Exif Attributes</p>
+
+<a name="ExifValueByIndex"></a><p><b>ExifValueByIndex</b>(<i>Index</i>) - Returns the value of the Exif attribute as a string given the 
+index within the array. <i>Index</i> is an integer.</p>
+
+<a name="ExifValueByName"></a><p><b>ExifValueByName</b>(<i>Name</i>) - Returns the value of the Exif attribute as a string given the 
+name of the attribute. <i>Name</i> is a string.</p>
+
+<a name="ExifName"></a><p><b>ExifName</b>(<i>Index</i>) - Returns the name of the Exif attribute as a string given the index within 
+the array. <i>Index</i> is an integer.</p>
+
+<a name="ExifCount"></a><p><b>ExifCount</b> - Integer property, read only. The number of Exif attributes.</p>
+
+<a name="ExifClear"></a><p><b>ExifClear</b> - This method clears all the Exif attributes. After calling <i>ExifClear</i> any JPG saved 
+will have no Exif attributes.</p>
+
+<p>Example:</p>
+
+<p class=courier>Set Image = Server.CreateObject(&quot;csImageFileTrial.Manage&quot;)<br>
+Image.ReadFile &quot;C:\path\to\image.jpg&quot;<br>
+For I = 0 to Image.ExifCount - 1<br>
+&nbsp;&nbsp;Response.Write Image.ExifName(I) &amp; &quot;: &quot; &amp; Image.ExifValueByIndex(I)<br>
+&nbsp;&nbsp;Response.Write &quot;&lt;br&gt;&quot;<br>
+Next</p>
+
+<p>This uses the trial version of csImageFile to list all the Exif attributes stored in the image.</p>
+
+<a name="ExifConvertUTF8"></a><p><b>ExifConvertUTF8</b> - Boolean property. When true, UTF-8 encoded characters in strings will be 
+automatically converted on reading and writing. (Default = true)</p>
+
+<a name="sect7.2"></a><p class=title>7.2. Writing Exif Attributes</p>
+
+<p>Individual Exif attributes can be written or deleted. They are always specified by the name of the attribute.</p>
+
+<a name="ExifSetAttribute"></a><p><b>ExifSetAttribute</b> <i>Name</i>, <i>Value</i> - Boolean return value. The Exif attribute <i>Name</i> 
+is set to <i>Value</i>. <i>Name</i> and <i>Value</i> are both strings. If the attribute is set successfully the return value is true, 
+otherwise it is false. If the name is invalid or if the value is not in the correct format the attribute will not be set.</p>
+
+<a name="ExifDelete"></a><p><b>ExifDelete</b> <i>Name</i> - Boolean return value. The Exif attribute <i>Name</i> is deleted. <i>Name</i> is a 
+string. If the deletion is successful the return value will be true. If <i>Name</i> is not a valid attribute name the return value will be false.</p>
+
+<a name="sect7.3"></a><p class=title>7.3. Exif Data Types</p>
+
+<p>Each Exif attribute is stored as one of the data types listed below.</p>
+
+<p>BYTE - An 8 bit unsigned integer.</p>
+
+<p>ASCII - An ASCII character.</p>
+
+<p>SHORT - A 16 bit (2 byte) unsigned integer.</p>
+
+<p>LONG - A 32 bit (4 byte) unsigned integer.</p>
+
+<p>RATIONAL - Two LONGs. The first is the numerator and the second is the denominator. The <i>RationalToReal</i> function can convert one of 
+these values to a real number. The <i>ExifSetAttribute</i> function can accept either a real number or a rational number, in string format. 
+So &quot;3/2&quot; and &quot;1.5&quot; would both be accepted by <i>ExifSetAttribute</i>.</p>
+
+<p>UNDEFINED - An 8 bit byte that can take any meaning depending on the field definition. This will be returned as a 2 character string of 
+the hexadecimal byte value. Where multiple values are stored in the same attribute they are returned as a comma separated string. The 
+ExifVersion attribute would return &quot;30,32,32,30&quot; for Exif 2.2. The ExifVersion attribute is defined to contain 4 bytes and each 
+byte represents an ASCII character, so the bytes shown here translate to &quot;0220&quot;. Other &quot;Undefined&quot; attributes will have 
+different meanings and will not necessary represent ASCII characters.</p>
+
+<p>SLONG - A 32 bit (4 byte) signed integer.</p>
+
+<p>SRATIONAL - Two SLONGs. The first is the numerator and the second the denominator.</p>
+
+<p>Date and time attributes are stored as strings in the format &quot;YYYY:MM:DD HH:MM:SS&quot;. The <i>ExifStringToDate</i> and 
+<i>ExifDateToString</i> functions can convert between this string format and the date/time format used by ActiveX components.</p>
+
+<a name="sect7.4"></a><p class=title>7.4. Exif Helper Functions</p>
+
+<p>The following functions convert data from values stored in the Exif attributes into more usable forms, or convert data into a 
+string value for use with the <i>ExifSetAttribute</i> method.</p>
+
+<a name="RationalToReal"></a><p><b>RationalToReal</b>(<i>Value</i>) - <i>Value</i> is a string of the form &quot;A/B&quot; where A and B are 
+integers and it returns a real number. It is used for converting a value stored as RATIONAL or SRATIONAL into a real number for further processing.</p>
+
+<a name="ExifStringToDate"></a><p><b>ExifStringToDate</b>(<i>Value</i>) - <i>Value</i> is a string containing a date/time of the form 
+&quot;YYYY:MM:DD HH:MM:SS&quot;, which is how date/time Exif attributes are stored. The return value is in the format of an ActiveX 
+date/time variable. If <i>Value</i> is not in the correct format the return value will be zero. It will not generate an error.</p>
+
+<a name="ExifDateToString"></a><p><b>ExifDateToString</b>(<i>Value</i>) - <i>Value</i> is an ActiveX date/time and the return value is the 
+date and time in the form &quot;YYYY:MM:DD HH:MM:SS&quot;. This can be used for converting a date/time into a string that can be used by the 
+<i>ExifSetAttribute</i> function.</p>
+
+<p>The following functions return information about the Exif attributes. This information can be found in the Exif specification but these 
+functions can provide a useful reference and also clarify the values that csImageFile uses.</p>
+
+<a name="ExifAttributeName"></a><p><b>ExifAttributeName</b>(<i>Tag</i>) - <i>Tag</i> is the 2 byte integer ID for the attribute. The return 
+value is the string value of the attribute name as it is used by the other functions in this section.</p>
+
+<a name="ExifDataType"></a><p><b>ExifDataType</b>(<i>Name</i>) - This returns the Exif data type for the <i>Name</i> attribute. 
+Possible return values are 1 - BYTE, 2 - ASCII, 3 - SHORT, 4 - LONG, 5 - RATIONAL, 7 - UNDEFINED, 9 - SLONG, 10 - SRATIONAL. <i>Name</i> 
+is a string, the return value is an integer.</p>
+
+<a name="ExifDataCount"></a><p><b>ExifDataCount</b>(<i>Name</i>) - This returns the size of the <i>Name</i> attribute. It is the number of 
+data items, not the number of bytes occupied. For ASCII and UNDEFINED data types of variable length this value is zero. <i>Name</i> is a string.</p>
+
+<a name="sect8"></a><p class=title>8. Streaming an Image to the Browser</p>
+
+<p>An active server page will return HTML output by default. An HTML page is formatted text which can include spaces to display images. The 
+images themselves are not part of the HTML but are separate files, the location of which is specified inside the &lt;IMG&gt; tag. An ASP page 
+can be an image if the ContentType is set to &quot;image/gif&quot; or &quot;image/jpeg&quot; and the binary data of the image is output using 
+the Response.BinaryWrite command. The ASP image is generated by placing the path to the script inside the &lt;IMG&gt; tag.</p>
+
+<p>For example, this page will display the image produced by &quot;resize.asp&quot;:</p>
+
+<p class=courier>
+&lt;html&gt;<br>
+&lt;head&gt;&lt;title&gt;HTML page containing an image&lt;/title&gt;&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;img src=&quot;resize.asp&quot;&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;</p>
+
+<p>Resize.asp may look like this:</p>
+
+<p class=courier>&lt;%@ language=vbscript %&gt;<br>
+&lt;%<br>
+Response.Expires = 0<br>
+Response.Buffer = true<br>
+Response.Clear<br>
+Set Image = Server.CreateObject(&quot;csImageFile.Manage&quot;)<br>
+Image.ReadFile &quot;c:\images\bigimage.jpg&quot;<br>
+Image.Scale 25<br>
+Response.ContentType = &quot;image/jpeg&quot;<br>
+Response.BinaryWrite Image.JPGData<br>
+%&gt;</p>
+
+<p>When the first HTML page is loaded it looks for the image at &quot;resize.asp&quot;, runs the script and is sent a stream of binary data in 
+JPG format, so the browser displays the image. It is not possible to place the BinaryWrite command inside the IMG tag to produce the image, it 
+must be in a separate file.</p>
+
+<p>If the line setting the ContentType is missing the image should still display in Internet Explorer but it might not in other browsers. 
+It is important to specify the correct ContentType to maintain compatibility.</p>
+
+<p>It is useful to know that parameters can be passed to the ASP image script using the URL string and this can be read using Request.QueryString 
+and used somewhere in the script.</p>
+
+<p>Example:</p>
+
+<p class=courier>&lt;img src=&quot;resize.asp?NewSize=150&quot;&gt;</p>
+
+<p>This can be used by resize.asp:</p>
+
+<p class=courier>Image.Resize Request.QueryString(&quot;NewSize&quot;), 0</p>
+
+<a name="sect9"></a><p class=title>9. Language Specific Issues</p>
+
+<p>All the examples that are shown so far in these instructions use ASP and VBScript. The csImageFile component is a COM object and can be 
+used in most COM enabled environments running on a Windows platform. We cannot begin to cover all the possible development environments 
+here so instead we concentrate on ASP and in this section we show the syntax for Cold Fusion, Visual Basic and ASP.NET.</p>
+
+<a name="sect9.1"></a><p class=title>9.1. Active Server Pages</p>
+
+<p>ASP and VBScript is already covered in these instructions but the following points are worth noting.</p>
+
+<p>Calls to methods (functions) do not use brackets, although their use does not generate an error if there is only one parameter. For 
+example the correct syntax for <i>Resize</i> is:</p>
+
+<p class=courier>Image.Resize 200, 0</p>
+
+<p>These instructions show methods without brackets surrounding the parameters.</p>
+
+<p>If the method has a return value that is assigned to another variable, the brackets are required. For example:</p>
+
+<p class=courier>Success = Image.ExifSetAttribute(&quot;ImageDescription&quot;, &quot;New description&quot;)</p>
+
+<p>If the return value is not assigned, the brackets will give an error.</p>
+
+<p>Assigning a property value requires an equals sign. Missing the equals sign results in the unhelpful error &quot;Object doesn't support this 
+property or method&quot;. The correct syntax is:</p>
+
+<p class=courier>Image.JpegQuality = 70</p>
+
+<p>A lot of ASP syntax errors are caused by adding brackets when they are not required, or missing them when they are required, missing 
+equals signs when assigning a property, or accidentally including an equals sign in a method call.</p>
+
+<a name="sect9.1.1"></a><p class=title>9.1.1. ASP with Javascript</p>
+
+<p>We don't provide any examples of using ASP with other scripting languages, other than VBScript. We will mention the following about 
+using Javascript with ASP.</p>
+
+<p>Brackets are needed around function parameters.</p>
+
+<p>The backslash character is used as an escape character in Javascript and two should be used together when a backslash is needed:</p>
+
+<p class=courier>Image.WriteFile(&quot;C:\\output\\newimage.gif&quot;);</p>
+
+<a name="sect9.2"></a><p class=title>9.2. Cold Fusion</p>
+
+<p>In Cold Fusion, a COM object is created using the &lt;cfobject&gt; tag:</p>
+
+<p class=courier>&lt;cfobject action=&quot;create&quot; name=&quot;Image&quot; class=&quot;csImageFile.Manage&quot;&gt;</p>
+
+<p>Each command must be placed inside a &lt;cfset&gt; tag and all method parameters must be enclosed by brackets:</p>
+
+<p class=courier>
+&lt;cfset Image.ReadFile(&quot;c:\images\bigimage.jpg&quot;)&gt;<br>
+&lt;cfset Image.Scale(20)&gt;<br>
+&lt;cfset Image.WriteFile(&quot;c:\images\smallimage.jpg&quot;)&gt;</p>
+
+<p>Alternatively, the commands can be put inside a &lt;cfscript&gt; block:</p>
+
+<p class=courier>
+&lt;cfscript&gt;<br>
+Image.ReadFile(&quot;c:\images\bigimage.jpg&quot;);<br>
+Image.Scale(20);<br>
+Image.WriteFile(&quot;c:\images\smallimage.jpg&quot;);<br>
+&lt;/cfscript&gt;</p>
+
+<p>Cold Fusion does not support variant arrays and so commands such as <i>GIFData</i>, <i>JPGData</i> and <i>ReadVariant</i> cannot be used. 
+Images cannot be streamed directly to the browser so any dynamically produced image must be saved to a temporary file first and then 
+displayed using a &lt;cfcontent&gt; tag.</p>
+
+<p>For more on using csImageFile with Cold Fusion visit <a href="http://www.chestysoft.com/imagefile/cf.htm" 
+class=low>www.chestysoft.com/imagefile/cf.htm</a>.</p>
+
+<a name="sect9.3"></a><p class=title>9.3. Visual Basic</p>
+
+<p>For best results import the csImageFile type library into VB by selecting &quot;Project&quot; from the menu bar, then &quot;References&quot;. 
+The dialogue box will then show available type libraries. Scroll down to &quot;csImageFile Library&quot;, check the box and click OK. This will 
+add the &quot;Manage&quot; class from csImageFile to the Object Browser, making it available for early binding.</p>
+
+<p>To create an instance of the object called &quot;Image&quot; use the following code:</p>
+
+<p class=courier>Dim Image As Manage<br>
+Set Image = CreateObject(&quot;csImageFile.Manage&quot;)</p>
+
+<p>Displaying an image from csImageFile in a VB picture box is not simple as it involves an API call to create a bitmap. There is a 
+description of this and some sample code on our web site at: <a href="http://www.chestysoft.com/imagefile/vbimage.asp" 
+class=low>www.chestysoft.com/imagefile/vbimage.asp</a>.</p>
+
+<p>We have an OCX control called csXImage which is much more suited for use with Visual Basic: <a href="http://www.chestysoft.com/ximage/default.asp" 
+class=low>www.chestysoft.com/ximage/default.asp</a>.</p>
+
+<a name="sect9.4"></a><p class=title>9.4. ASP.NET</p>
+
+<p>csImageFile can be used with ASP.NET. The component must be registered on the server as described earlier and it can be called using 
+Server.CreateObject. For example:</p>
+
+<p class=courier>Dim Image = Server.CreateObject(&quot;csImageFile.Manage&quot;)</p>
+
+<p>The object is created using Dim instead of Set. For the trial version the class name is &quot;csImageFileTrial.Manage&quot;.</p>
+
+<p>The image cannot be streamed to the browser in a single line because of incompatibilities between ActiveX and .NET, but there is a workaround 
+which we describe in the VB.NET example below.</p>
+
+<p class=courier>
+&lt;%@ Page language=&quot;vb&quot; debug=&quot;true&quot; %&gt;<br>
+&lt;%<br>
+Response.Expires = 0<br>
+Response.Buffer = true<br>
+Response.Clear<br><br>
+
+Dim Image = Server.CreateObject(&quot;csImageFile.Manage&quot;)<br>
+Image.NewImage(150, 50, &quot;00ff00&quot;)<br>
+Image.TextOpaque = false<br>
+Image.TextSize = 22<br>
+Image.Text(5, 10, &quot;Sample image&quot;)<br>
+Dim OutArray As Array = Image.GIFData<br>
+Dim ByteArray(OutArray.Length - 1) As Byte<br>
+Array.Copy(OutArray, ByteArray, OutArray.Length)<br>
+Response.ContentType = &quot;Image/gif&quot;<br>
+Response.BinaryWrite(ByteArray)<br>
+%&gt;</p>
+
+<p>This creates a new image and draws some text onto it. In order to stream it to the browser the output from the GIFData property needs to 
+be passed to an array of bytes so that it can be sent out through BinaryWrite.</p>
+
+<p>In VB.NET brackets are used to enclose function parameters.</p>
+
+<a name="sect9.4.1"></a><p class=title>9.4.1. Early Binding</p>
+
+<p>The previous example used late binding, which is the easier way of calling an ASP component in ASP.NET. It is more efficient to use 
+early binding, but this requires the creation of a .NET Framework Interop Assembly using the TLBIMP tool, supplied with the Framework. 
+This assembly is a DLL which acts as a wrapper for the ASP component.</p>
+
+<p>After registering the component, run TLBIMP.exe from the command prompt or from the Run box in the Start Menu. The syntax is:</p>
+
+<p class=courier>TLBIMP ComponentName.dll /out:NewName.dll</p>
+
+<p>Full paths are required for both DLLs. The new DLL needs to be put in the website's BIN directory. The script that calls the component 
+must import the Interop Assembly as a NameSpace. The component instance is created using the following VB.NET syntax:</p>
+
+<p class=courier>Dim ObjName As New ClassNameClass()</p>
+
+<p><i>ObjName</i> is the name of the object instance and <i>ClassName</i> is the name of the class in the ASP component, which is Manage in csImageFile.</p>
+
+<p>The script that uses the component must import the Interop Assembly as a Namespace. If the Interop Assembly is called 
+&quot;csimagefilenet.dll&quot; the following line imports it:</p>
+
+<p class=courier>&lt;%@ Import Namespace = &quot;csimagefilenet&quot; %&gt;</p>
+
+<p>In the previous example the only other change required is to replace the Server.CreateObject line with:</p>
+
+<p class=courier>Dim Image As New ManageClass()</p>
+
+<a name="sect10"></a><p class=title>10. Utility Functions</p>
+
+<p>There are a number of utility functions provided for convenience which are mostly related to file handling. Some of them are 
+restricted to use in ASP. For a full range of file handling functions use the File System Object instead.</p>
+
+<a name="FileExists"></a><p><b>FileExists</b>(<i>FileName</i>) - Boolean property, read only. Checks for the existence of the file 
+defined by <i>FileName</i>. <i>FileName</i> is a string and must be a physical path.</i>
+
+<a name="CurrentDir"></a><p><b>CurrentDir</b> - String property, read only. This can only be used in ASP scripts and it returns the 
+physical path of the directory containing the script, complete with trailing backslash.</p>
+
+<a name="ParentDir"></a><p><b>ParentDir</b>(<i>Directory</i>) - String property, read only. This returns the physical path of the 
+parent directory to <i>Directory</i>. <i>Directory</i> is a string.</p>
+
+<p>Example:</p>
+
+<p class=courier>Response.Write Image.ParentDir(Image.CurrentDir)</p>
+
+<p>This would display the directory immediately above the directory containing the script.</p>
+
+<a name="DirName"></a><p><b>DirName</b> - String property. This is the directory that will be listed in the <i>FileList</i> collection. 
+It is a physical path and can include a single filter in the name.</p>
+
+<p>Example 1:</p>
+
+<p class=courier>Image.DirName = &quot;C:\images\&quot;</p>
+
+<p>This will assign all the files in the &quot;images&quot; directory to the <i>FileList</i> collection.</p>
+
+<p class=courier>Image.DirName = &quot;C:\images\*.jpg&quot;</p>
+
+<p>This will assign all the files in the &quot;images&quot; directory with a .jpg extension to the <i>FileList</i> collection.</p>
+
+<a name="FileList"></a><p><b>FileList</b> - Collection of strings. When a directory is assigned to the <i>DirName</i> property this 
+collection will be populated by a list of the files in that directory. As a Collection it can be accessed by index using the <i>Item</i> 
+property, or in a For..Each loop, and it has a <i>Count</i> property.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.DirName = &quot;C:\images\*.jpg&quot;<br>
+For Each JPG in Image.FileList<br>
+&nbsp;&nbsp;Response.Write JPG &amp; &quot;&lt;br&gt;&quot;<br>
+Next</p>
+
+<p>This would display all the .jpg files in the specified directory.</p>
+
+<a name=""></a><p><b>Delete</b> <i>FileName</i> - This deletes the file specified by the physical path <i>FileName</i>. Note that it is 
+permanently deleted NOT placed in the Recycle Bin. <i>FileName</i> is a string.</p>
+
+<a name=""></a><p><b>Copy</b> <i>OldName</i>, <i>NewName</i> - This copies the file <i>OldName</i> to the location and name given by <i>NewName</i>. 
+Full paths are required. <i>OldName</i> and <i>NewName</i> are strings.</p>
+
+<a name="Rename"></a><p><b>Rename</b> <i>OldName</i>, <i>NewName</i> - This renames the file <i>OldName</i> to <i>NewName</i>. Physical paths 
+are required. Renaming to a different directory is the equivalent of moving the file. <i>OldName</i> and <i>NewName</i> are strings.</p>
+
+<a name=""></a><p><b>GetFileName</b>(<i>Path</i>) - This function returns the file name, complete with extension but without the directory 
+structure, where Path is a physical path and file name. <i>Path</i> is a string.</p>
+
+<a name=""></a><p><b>GetExtension</b>(<i>Path</i>) - This function returns the extension, complete with the period character, where <i>Path</i> 
+is a physical path and file name. <i>Path</i> is a string.</p>
+
+<a name="AppendToFile"></a><p><b>AppendToFile</b> <i>FileName</i>, <i>NewLine</i> - This function appends the string <i>NewLine</i> to the 
+text file <i>FileName</i>. If the text file does not exist it will be created if possible. The physical path is required. 
+<i>FileName</i> and <i>NewLine</i> are strings.</p>
+
+<p>Example:</p>
+
+<p class=courier>Image.AppendToFile Image.CurrentDir &amp; &quot;test.txt&quot;, &quot;Testing&quot;</p>
+
+<p>This will append the line &quot;Testing&quot; at the end of a text file called &quot;test.txt&quot; which is in the same directory 
+as the script. If the file does not exist it will create it.</p>
+
+<p><i>AppendToFile</i> is the only command in this component for manipulating text files. It is useful for maintaining a simple log or 
+to assist in debugging. For a complete set of commands for working with text files, use the File System Object.</p>
+
+<p>All the file handling routines require that the Internet Guest User account has the appropriate permissions. If files are to be accessed 
+across a network, Component Services will need to be configured as described in Section 1.4.</p>
+
+<a name="GetTickCount"></a><p><b>GetTickCount</b> - Integer property, read only. This returns the number of milliseconds that have 
+elapsed since the computer was switched on. It can be used for timing sections of code.</p>
+
+<p>Example:</p>
+
+<p class=courier>
+T = Image.GetTickCount<br>
+' Code that is to be timed<br>
+T = Image.GetTickCount - T<br>
+Response.Write T</p>
+
+<p>This will display the number of milliseconds taken for the code to run. If it is less than 0.5 milliseconds it will return zero.</p>
+
+<a name="sect11"></a><p class=title>11. Web Examples</p>
+
+<p>There are a number of web pages on the Chestysoft web site that provide further reference. These include some tips on getting started 
+and troubleshooting, code examples that can be downloaded, and working examples on our demonstration site.</p>
+
+<p>ASP Examples: <a href="http://www.chestysoft.com/imagefile/examplesasp.asp" class=low>www.chestysoft.com/imagefile/examplesasp.asp</a></p>
+
+<p>Cold Fusion Examples: <a href="http://www.chestysoft.com/imagefile/examplescf.htm" class=low>www.chestysoft.com/imagefile/examplescf.htm</a>
+
+<p>Both of these pages contain links to all the available examples and tutorials.</p>
+
+<a name="sect12"></a><p class=title>12. Supported Image Formats</p>
+
+<p>csImageFile supports the reading and writing of files in most popular formats commonly found on the web. These formats are briefly summarised here.</p>
+
+<a name="sect12.1"></a><p class=title>12.1. BMP (Bitmap)</p>
+
+<p>BMP is the standard graphics format for Windows systems. The image is stored uncompressed and can be in either 24 bit or a paletted format. 
+The palette can be either 256 colour (8 bit), 16 colour (4 bit) or monochrome (1 bit).</p>
+
+<p>Bitmaps are usually larger file sizes than other images because they are uncompressed but they are often faster to import and export because 
+there is no compression to calculate.</p>
+
+<a name="sect12.2"></a><p class=title>12.2. JPG / JPEG / JPE (Joint Photographic Experts Group)</p>
+
+<p>The JPEG file format is probably the most common method of saving full colour images, typically photographs, when a high level of compression 
+is required. It uses a &quot;lossy&quot; compression method, which means that the image read from a saved file will not be identical to the 
+original image before it was saved.</p>
+
+<p>Repeated loading and saving of a JPEG file will result in deterioration of the quality, and should be avoided, but at the levels of 
+compression typically used for saving photographs, the loss of quality is hardly noticeable when the file is saved once from its original. 
+The type of compression used by JPEGs does not produce good quality images that contain sharp edges and text as these edges often become 
+blurred on saving, even using a low compression level. The <i>JpegQuality</i> property controls the amount of compression used when a JPEG is saved.</p>
+
+<p>JPEG compression / quality is not a universal value and different software packages use different scales. It cannot be read directly from 
+an image, although csImageFile has a read only property, <i>JpegApproxQuality</i>, that gives an approximate value. This could be useful when 
+reading images that have already been compressed in order to save them again with a similar level of compression. If <i>JpegQuality</i> is set 
+to a higher value than that originally used to save the image, the new image will have a larger file size without gaining any quality, and it 
+is better to avoid this if possible.</p>
+
+<a name="JpegApproxQuality"></a><p><b>JpegApproxQuality</b> - Integer in the range 0 to 100, read only. When a JPG is loaded, this property 
+contains an approximate value for the compression (quality) used when the image was saved. It corresponds to the same range of values as 
+<i>JpegQuality</i> except 0 indicates the value is undefined.</p>
+
+<a name="JpegApproxQualityError"></a><p><b>JpegApproxQualityError</b> - Double, read only. When a JPG is loaded, this property contains an 
+indication of the accuracy of the <i>JpegApproxQuality</i> property. A lower value indicates a higher level of accuracy. A value of less 
+than 1 indicates that <i>JpegApproxQuality</i> is a reliable measure of the quality while a value of tens or hundreds indicates that 
+<i>JpegApproxQuality</i> is merely an approximate estimate.</p>
+
+<p>JPEG files stored in CMYK colour space can be read by csImageFile and are automatically converted to RGB. The <i>WasCMYK</i> property is set 
+to true to indicate a conversion has taken place. Saving to CMYK is not supported.</p>
+
+<p>IPTC text (File Info) and Exif data can be stored in JPEG files and this data can be read and edited with csImageFile.</p>
+
+<p>JPEG images are usually stored as 24 bit RGB images but they can also be stored as 8 bit greyscale. 
+See the <i>JpegGrayScale</i> property for details.</p>
+
+<p>csImageFile provides an option for opening JPEG files at a higher speed while reducing image quality. This can be useful if speed is 
+important, for example when creating thumbnails dynamically. Set the <i>JpegHigherSpeed</i> property to true before loading the image for 
+this to take effect.</p>
+
+<a name="sect12.3"></a><p class=title>12.3. GIF (Graphics Interchange Format)</p>
+
+<p>GIF format saves files using 256 colours or less. It can compress images with large areas of a single colour very efficiently and is 
+commonly used in web pages for backgrounds, logos, etc. The compression is &quot;lossless&quot;. GIFs use the LZW compression method.</p>
+
+<p>GIF images support the use of a transparent colour. See the <i>Transparent</i> and <i>BGColor</i> properties for details.</p>
+
+<p>GIF files can contain multiple images (or frames) and these are usually used to create animations for use in web pages. csImageFile 
+does not support multi frame GIFs and will only read the first frame. We have a component that can work with multi frame GIFs called 
+csASPGif - <a href="http://www.chestysoft.com/aspgif/default.asp" class=low>www.chestysoft.com/aspgif/default.asp</a>.</p>
+
+<a name="sect12.4"></a><p class=title>12.4. PNG (Portable Network Graphics)</p>
+
+<p>The PNG format provides an efficient lossless compression of image data and it uses the same compression method as zip files. It provides 
+a wide range of colour depths, but these are not all supported by csImageFile. Supported colour depths are 24 bit, 8 bit, 4 bit and 1 bit. 
+Paletted images support single colour transparency in the same way as GIF files. The PNG format also allows for an alpha channel for variable 
+transparency but this is not supported by csImageFile.</p>
+
+<a name="sect12.5"></a><p class=title>12.5. TIF / TIFF (Tagged Image File Format)</p>
+
+<p>The TIF file format allows images to be stored in many different ways. The baseline TIF specification is fully supported by csImageFile 
+and this allows for images to be stored as 24 bit RGB, paletted (8 bit or 4 bit), greyscale or black and white. The image can be 
+uncompressed or stored using the Packbits compression method which is a lossless run-length compression.</p>
+
+<p>In addition to the baseline specification, some extensions to the TIF format are supported as described below.</p>
+
+<p>Images stored using the CCITT Group 3 or Group 4 fax compression schemes can be read. Files can be written using Group 4 compression. 
+These compression schemes apply to black and white images only and are very efficient.</p>
+
+<p>Files stored in CMYK colour space can be read and are automatically converted to RGB. The <i>WasCMYK</i> property is set to true to 
+indicate a conversion has taken place. Saving to CMYK is not supported.</p>
+
+<p>Files stored using LZW compression can be read, but this compression method is not available for writing.</p>
+
+<p>TIF files can contain multiple pages and support for this is described in Section 2.4.</p>
+
+<p>IPTC text (File Info) and Exif data can be stored in TIF files. csImageFile supports IPTC as described in Section 6. Exif is not currently supported.</p>
+
+<p>There are further extensions to the TIF format that are not supported by csImageFile including JPEG compression, YcbCr and LAB.</p>
+
+<a name="sect12.6"></a><p class=title>12.6. PSD (Photoshop Format)</p>
+
+<p>This is the standard format used by Adobe Photoshop to save images. A PSD file can contain multiple layers of an image, as well as the 
+composite image created by combining the layers together. As csImageFile only holds a single image, it simply reads the composite image 
+and ignores the layers. A PSD file saved by csImageFile will only have a composite image and no layers.</p>
+
+<p>Files stored in CMYK colour space can be read and are automatically converted to RGB. The <i>WasCMYK</i> property is set to true to 
+indicate a conversion has taken place. Saving to CMYK is not supported.</p>
+
+<p>Reading and writing IPTC text (File Info) in PSD files is supported.</p>
+
+<a name="sect12.7"></a><p class=title>12.7. PCX Format (ZSoft Paintbrush Format)</p>
+
+<p>PCX is an old format for saving images of all colour depths. It uses a simple run length encoding compression system which is lossless 
+but not very efficient. It is not commonly used today.</p>
+
+<a name="sect12.8"></a><p class=title>12.8. WBMP / WBM (Wireless Bitmap)</p>
+
+<p>The WBMP format is used by WAP devices. It only supports black and white images.</p>
+
+<a name="sect13"></a><p class=title>13. Revision History</p>
+
+<p>The current version of csImageFile is 5.0</p>
+
+<p>The main changes since version 3.0 are described below.</p>
+
+<p><u>New in Version 3.0</u></p>
+
+<p>IPTC / File Info properties added (JPEG metadata).<br>
+Sharpen and Blur functions added.<br>
+GreyScale method added.<br>
+ColorAdjust method added.<br>
+Colour depth can be reduced to produce a paletted image.<br>
+OverwriteMode added to control renaming uploaded files.</p>
+
+<p><u>New in version 4.0</u></p>
+
+<p>Support for PSD and TIF files added.<br>
+Support for compressed GIF files added.<br>
+File Info properties now include support for .XMP file format.<br>
+EXIF attributes can now be read from JPG files.<br>
+FileList collection added.<br>
+ReadURL can now identify files from the MIME type.<br>
+Basic Authentication password and username added to ReadURL method.<br>
+ConvertToBW method added.</p>
+
+<p><u>New in version 4.1</u></p>
+
+<p>TIF support extended to include LZW and Group 4 compression.<br>
+JPG and TIF images using CMYK colour space can be read.<br>
+OLE_COLOR conversion functions added.<br>
+Polygon method added.<br>
+SharpenBy and BlurBy methods added.<br>
+ProgressiveJpeg property added.<br>
+Use of a bitmap as the fill pattern included.<br>
+Unicode support added to Text method.</p>
+
+<p><u>New in version 4.2</u></p>
+
+<p>Antialias property for text and drawing functions.<br>
+TextJustify property.<br>
+Carriage returns can be used with the Text method.<br>
+OverwriteChr property.<br>
+WasCMYK property.<br>
+TIF support extended to include Group 3 compression.</p>
+
+<p><u>New in version 4.3</u></p>
+
+<p>OverwriteMetaData method added.<br>
+Additional IPTC fields supported.<br>
+PSD images using CMYK colour space can be read.<br>
+MergeFrontHDC and MergeBackHDC methods added.<br>
+Modifications to ReadURL allowing SSL connections and Integrated Windows Authentication.</p>
+
+<p><u>New in version 4.4</u></p>
+
+<p>Changes to the way antialiased text is drawn. This is not fully compatible with previous component versions although the overall results 
+are improved. Now the ColorDepth property must be set to 24 before drawing the text, and small font sizes will not be antialiased.<br>
+IPTC support added for TIF images.</p>
+
+<p><u>New in version 5.0</u></p>
+
+<p>Images can now be read when they have the wrong extension, or in the case of binary imports, when the format is not known. 
+ReadVariant, OriginalImageType, IgnoreInputFileType added.<br>
+Arc3XY, Circle3XY, CircleCR and PolyBezier methods added.<br>
+BlurText property added to allow text to be antialiased as versions 4.2 and 4.3.<br>
+ResizeFit added to resize to a specified maximum width and height.<br>
+Support for 8 bit greyscale JPEGS, JpegGrayScale property added.<br>
+Multi-page TIF support.<br>
+Exif support upgraded to Exif version 2.2 with ability to write attributes.</p>
+
+<a name="sect14"></a><p class=title>14. Other Products From Chestysoft</p>
+
+<table>
+<tr><td colspan=2><b>OCX</b></td></tr>
+<tr><td height=2></td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/ximage/default.asp" class=low>csXImage</A></td>
+<td width=450>An OCX control to display, edit and scan images.</td></tr>
+<tr><td height=4></td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/xgraph/default.asp" class=low>csXGraph</A></td>
+<td width=450>An OCX control to draw pie charts, bar charts and line graphs.</td></tr>
+<tr><td height=4></td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/xpostupload/default.asp" class=low>csXPostUpload</A></td>
+<td width=450>A control to upload batches of files from a client to a server using an HTTP post.</td></tr>
+<tr><td height=4></td></tr>
+<tr><td colspan=2><b>ASP Components</b></td></tr>
+<tr><td height=2></td></tr>
+<tr><td width=150>
+<a href="http://www.chestysoft.com/drawgraph/default.asp" class=low>csDrawGraph</a></td>
+<td width=450>Draw pie charts, bar charts and line graphs in ASP.</td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/aspgif/default.asp" class=low>csASPGif</A></td>
+<td width=450>Create and edit animated GIFs.</td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/inifile/default.asp" class=low>csIniFile</A></td>
+<td width=450>Read and Edit Windows style inifiles.</td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/upload/default.asp" class=low>csASPUpload</A></td>
+<td width=450>Process file uploads through a browser.</td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/zipfile/default.asp" class=low>csASPZipFile</A></td>
+<td width=450>Create zip files and control binary file downloads.</td></tr>
+<tr><td width=150>
+<A HREF="http://www.chestysoft.com/filedownload/default.asp" class=low>csFileDownload</A></td>
+<td width=450>Control file downloads with an ASP script.</td></tr></table>
+
+<p><b>Web Hosting</b></p>
+<p>We can offer ASP enabled web hosting with our components installed. <a href="http://www.chestysoft.com/hosting/default.asp" 
+class=lowClick for more details.</a></p>
+
+
+<a name="sect15"></a><p class=title>15. Alphabetical List of Commands</p>
+<p>Click on one of the links below to go directly to information about that command:</p>
+<table width=600>
+<tr><td width=150>
+  <table>
+    <tr><td>
+      <a href=#AddToTIF>AddToTIF</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Antialias>Antialias</a>
+    </td></tr>
+    <tr><td>
+      <a href=#AppendToFile>AppendToFile</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Arc>Arc</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Arc3XY>Arc3XY</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BezierPointAdd>BezierPointAdd</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BGColor>BGColor</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Blur>Blur</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BlurBy>BlurBy</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BlurText>BlurText</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BMPData>BMPData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BMPHandle>BMPHandle</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Brightness>Brightness</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BrushColor>BrushColor</a>
+    </td></tr>
+    <tr><td>
+      <a href=#BrushStyle>BrushStyle</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Chord>Chord</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Circle3XY>Circle3XY</a>
+    </td></tr>
+    <tr><td>
+      <a href=#CircleCR>CircleCR</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ClearBitmapBrush>ClearBitmapBrush</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ClearTIF>ClearTIF</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ColorAdjust>ColorAdjust</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ColorDepth>ColorDepth</a>
+    </td></tr>
+    <tr><td>
+      <a href=#CompressionType>CompressionType</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Contrast>Contrast</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ConvertToBW>ConvertToBW</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Copy>Copy</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Crop>Crop</a>
+    </td></tr>
+    <tr><td>
+      <a href=#CurrentDir>CurrentDir</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Delete>Delete</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DeleteTIF>DeleteTIF</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DirName>DirName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DPI>DPI</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DPIToDPM>DPIToDPM</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DPMToDPI>DPMToDPI</a>
+    </td></tr>
+    <tr><td>
+      <a href=#DrawLine>DrawLine</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Ellipse>Ellipse</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifAttributeName>ExifAttributeName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifClear>ExifClear</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifConvertUTF8>ExifConvertUTF8</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifCount>ExifCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifDataCount>ExifDataCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifDataType>ExifDataType</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifDateToString>ExifDateToString</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifDelete>ExifDelete</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifName>ExifName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifSetAttribute>ExifSetAttribute</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifStringToDate>ExifStringToDate</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifValueByIndex>ExifValueByIndex</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ExifValueByName>ExifValueByName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Author>FFO_Author</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_AuthorsPosition>FFO_AuthorsPosition</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Byline>FFO_Byline</a>
+    </td></tr>
+  </table>
+  </td>
+  <td width=150>
+  <table>
+    <tr><td>
+      <a href=#FFO_BylineTitle>FFO_BylineTitle</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Caption>FFO_Caption</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CaptionWriter>FFO_CaptionWriter</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Category>FFO_Category</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_City>FFO_City</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Clear>FFO_Clear</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CopyrightFlag>FFO_CopyrightFlag</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CopyrightNotice>FFO_CopyrightNotice</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CountryCode>FFO_CountryCode</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CountryName>FFO_CountryName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Credit>FFO_Credit</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CustomField1>FFO_CustomField1</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_CustomField20>FFO_CustomField20</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_DateCreated>FFO_DateCreated</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_DateReleased>FFO_DateReleased</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_EditStatus>FFO_EditStatus</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_FixtureIdentifier>FFO_FixtureIdentifier</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Headline>FFO_Headline</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ImageNotes>FFO_ImageNotes</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ImageURL>FFO_ImageURL</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Keywords>FFO_Keywords</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_KeywordsAdd>FFO_KeywordsAdd</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_KeywordsClear>FFO_KeywordsClear</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_KeywordsCount>FFO_KeywordsCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_KeywordsDelete>FFO_KeywordsDelete</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_KeywordsInsert>FFO_KeywordsInsert</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Load>FFO_Load</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_LocalCaption>FFO_LocalCaption</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Marked>FFO_Marked</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ObjectCycle>FFO_ObjectCycle</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ObjectName>FFO_ObjectName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_OriginatingProgram>FFO_OriginatingProgram</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_OTR>FFO_OTR</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ProgramVersion>FFO_ProgramVersion</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ProvinceState>FFO_ProvinceState</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ReferenceDate>FFO_ReferenceDate</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ReferenceNumber>FFO_ReferenceNumber</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_ReferenceService>FFO_ReferenceService</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Save>FFO_Save</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Source>FFO_Source</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SpecialInstructions>FFO_SpecialInstructions</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Sublocation>FFO_Sublocation</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCat>FFO_SuppCat</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCatAdd>FFO_SuppCatAdd</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCatClear>FFO_SuppCatClear</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCatCount>FFO_SuppCatCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCatDelete>FFO_SuppCatDelete</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_SuppCatInsert>FFO_SuppCatInsert</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_TimeCreated>FFO_TimeCreated</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_TimeReleased>FFO_TimeReleased</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Title>FFO_Title</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FFO_Urgency>FFO_Urgency</a>
+    </td></tr>
+  </table>
+</td>
+<td width=150>
+  <table>
+    <tr><td>
+      <a href=#FileExists>FileExists</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FileList>FileList</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FileName>FileName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FileSize>FileSize</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FillToBorder>FillToBorder</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FilterType>FilterType</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FlipX>FlipX</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FlipY>FlipY</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FloodFill>FloodFill</a>
+    </td></tr>
+    <tr><td>
+      <a href=#FontNames>FontNames</a>
+    </td></tr>
+    <tr><td>
+      <a href=#GetExtension>GetExtension</a>
+    </td></tr>
+    <tr><td>
+      <a href=#GetFileName>GetFileName</a>
+    </td></tr>
+    <tr><td>
+      <a href=#GetTickCount>GetTickCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#GIFData>GIFData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#GrayScale>GrayScale</a>
+    </td></tr>
+    <tr><td>
+      <a href=#HasFileInfo>HasFileInfo</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Height>Height</a>
+    </td></tr>
+    <tr><td>
+      <a href=#IgnoreInputFileType>IgnoreInputFileType</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ImageCount>ImageCount</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ImageCountBinary>ImageCountBinary</a>
+    </td></tr>
+    <tr><td>
+      <a href=#InsertTIF>InsertTIF</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JpegApproxQuality>JpegApproxQuality</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JpegApproxQualityError>JpegApproxQualityError</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JpegGrayScale>JpegGrayScale</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JpegHigherSpeed>JpegHigherSpeed</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JpegQuality>JpegQuality</a>
+    </td></tr>
+    <tr><td>
+      <a href=#JPGData>JPGData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Line>Line</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeBack>MergeBack</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeBackBin>MergeBackBin</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeBackHDC>MergeBackHDC</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeFront>MergeFront</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeFrontBin>MergeFrontBin</a>
+    </td></tr>
+    <tr><td>
+      <a href=#MergeFrontHDC>MergeFrontHDC</a>
+    </td></tr>
+    <tr><td>
+      <a href=#NewFileSize>NewFileSize</a>
+    </td></tr>
+    <tr><td>
+      <a href=#NewImage>NewImage</a>
+    </td></tr>
+    <tr><td>
+      <a href=#NewScale>NewScale</a>
+    </td></tr>
+    <tr><td>
+      <a href=#OLEColorToStr>OLEColorToStr</a>
+    </td></tr>
+    <tr><td>
+      <a href=#OriginalImageType>OriginalImageType</a>
+    </td></tr>
+    <tr><td>
+      <a href=#OverwriteChr>OverwriteChr</a>
+    </td></tr>
+    <tr><td>
+      <a href=#OverwriteMetaData>OverwriteMetaData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#OverwriteMode>OverwriteMode</a>
+    </td></tr>
+    <tr><td>
+      <a href=#ParentDir>ParentDir</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PCXData>PCXData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PenColor>PenColor</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PenStyle>PenStyle</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PenThickness>PenThickness</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Pie>Pie</a>
+    </td></tr>
+    <tr><td>
+      <a href=#Pixel>Pixel</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PNGData>PNGData</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PointAdd>PointAdd</a>
+    </td></tr>
+    <tr><td>
+      <a href=#PolyBezier>PolyBezier</a>
+    </td></tr>
+
+  </table>
+</td>
+<td width=150>
+  <table>
+    <tr><td><a href=#Polygon>Polygon</a></td></tr>
+    <tr><td><a href=#ProgressiveJpeg>ProgressiveJpeg</a></td></tr>
+    <tr><td><a href=#PSDData>PSDData</a></td></tr>
+    <tr><td><a href=#RationalToReal>RationalToReal</a></td></tr>
+    <tr><td><a href=#ReadFile>ReadFile</a></td></tr>
+    <tr><td><a href=#ReadImageNumber>ReadImageNumber</a></td></tr>
+    <tr><td><a href=#ReadStream>ReadStream</a></td></tr>
+    <tr><td><a href=#ReadURL>ReadURL</a></td></tr>
+    <tr><td><a href=#ReadVariant>ReadVariant</a></td></tr>
+    <tr><td><a href=#Rectangle>Rectangle</a></td></tr>
+    <tr><td><a href=#Rename>Rename</a></td></tr>
+    <tr><td><a href=#Resample>Resample</a></td></tr>
+    <tr><td><a href=#Resize>Resize</a></td></tr>
+    <tr><td><a href=#ResizeFit>ResizeFit</a></td></tr>
+    <tr><td><a href=#Rotate>Rotate</a></td></tr>
+    <tr><td><a href=#RoundRect>RoundRect</a></td></tr>
+    <tr><td><a href=#Scale>Scale</a></td></tr>
+    <tr><td><a href=#SetBitmapBrush>SetBitmapBrush</a></td></tr>
+    <tr><td><a href=#SetBitmapBrushHandle>SetBitmapBrushHandle</a></td></tr>
+    <tr><td><a href=#Sharpen>Sharpen</a></td></tr>
+    <tr><td><a href=#SharpenBy>SharpenBy</a></td></tr>
+    <tr><td><a href=#StrToOLEColor>StrToOLEColor</a></td></tr>
+    <tr><td><a href=#Text>Text</a></td></tr>
+    <tr><td><a href=#TextAngle>TextAngle</a></td></tr>
+    <tr><td><a href=#TextBG>TextBG</a></td></tr>
+    <tr><td><a href=#TextBold>TextBold</a></td></tr>
+    <tr><td><a href=#TextColor>TextColor</a></td></tr>
+    <tr><td><a href=#TextFont>TextFont</a></td></tr>
+    <tr><td><a href=#TextHeight>TextHeight</a></td></tr>
+    <tr><td><a href=#TextItalic>TextItalic</a></td></tr>
+    <tr><td><a href=#TextJustify>TextJustify</a></td></tr>
+    <tr><td><a href=#TextOpaque>TextOpaque</a></td></tr>
+    <tr><td><a href=#TextRectX>TextRectX</a></td></tr>
+    <tr><td><a href=#TextRectY>TextRectY</a></td></tr>
+    <tr><td><a href=#TextSize>TextSize</a></td></tr>
+    <tr><td><a href=#TextStrikeout>TextStrikeout</a></td></tr>
+    <tr><td><a href=#TextUnderline>TextUnderline</a></td></tr>
+    <tr><td><a href=#TextWidth>TextWidth</a></td></tr>
+    <tr><td><a href=#TextWrap>TextWrap</a></td></tr>
+    <tr><td><a href=#TIFData>TIFData</a></td></tr>
+    <tr><td><a href=#Tile>Tile</a></td></tr>
+    <tr><td><a href=#Transparent>Transparent</a></td></tr>
+    <tr><td><a href=#TransPercent>TransPercent</a></td></tr>
+    <tr><td><a href=#UseLZW>UseLZW</a></td></tr>
+    <tr><td><a href=#Version>Version</a></td></tr>
+    <tr><td><a href=#WasCMYK>WasCMYK</a></td></tr>
+    <tr><td><a href=#WBMPData>WBMPData</a></td></tr>
+    <tr><td><a href=#Width>Width</a></td></tr>
+    <tr><td><a href=#WriteFile>WriteFile</a></td></tr>
+    <tr><td><a href=#></a>&nbsp;</td></tr>
+    <tr><td><a href=#></a>&nbsp;</td></tr>
+    <tr><td><a href=#></a>&nbsp;</td></tr>
+  </table>
+</td></tr>
+</table>
+
+</td></tr></table>
+
+</table>
+<P>&nbsp;</P>
+<P>Chestysoft, February 2006.<br>
+<A HREF="http://www.chestysoft.com/" class=low>www.chestysoft.com</A></P>
+</body>
+</html>

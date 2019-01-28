@@ -1,0 +1,22 @@
+'Upload image now
+	If Request.Form("UpdateFile") ="ON" Then
+	Response.write("have been excuted")
+	
+	Set rs = conn.Execute("SELECT @@IDENTITY;")
+		If Not rs.Eof Then
+		image = rs(0)
+		
+		
+
+			Dim objUpload
+			Dim strPath
+			Set objUpload = New clsUpload
+			strPath = Server.MapPath("orig") & "\" & image & ".jpg"
+			objUpload("File1").SaveAs strPath
+			Set objUpload = Nothing
+
+			' create thumb nail
+			Execute("create_thumb.asp")
+		
+		
+		End IF

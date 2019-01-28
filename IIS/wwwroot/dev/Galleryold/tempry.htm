@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Exclusive Cabinets Gallary Add-Image</title>
+</head>
+<link rel="stylesheet" href="gallery.css" type="text/css">
+
+<body>
+	
+<form method="post" encType="multipart/form-data" action="ToFileSystem.asp">
+<table border="1" cellpadding="3" style="border-collapse: collapse" class="text">
+	<tr>
+		<td bgcolor="#3366CC" class="box2" colspan="2">Select image to bundle 
+		with info</td>
+	</tr>
+	<tr>
+		<td bgcolor="#3366CC" class="box2" width="66">Image</td>
+		<td bgcolor="#F5F5F5">
+	<input type="checkbox" name="UpdateFile" value="ON" checked onpropertychange="if(!this.checked){document.all.File1.value='';}" >
+	<INPUT  onpropertychange="if(this.value != ''){document.all.UpdateFile.checked=true;}" type="File" name="File1" size="89" class="text"></td>
+	</tr>
+	<tr>
+		<td bgcolor="#F5F5F5" colspan="2" align="right">
+		<input type="submit" value="Upload" name="B1" class="text"></td>
+	</tr>
+</table>
+
+</form>
+	
+</body>
+</html>

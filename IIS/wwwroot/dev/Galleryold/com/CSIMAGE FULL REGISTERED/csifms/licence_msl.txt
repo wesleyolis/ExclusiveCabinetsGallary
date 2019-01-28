@@ -1,0 +1,23 @@
+Chestysoft csImageFile version 5.0
+MULTIPLE SERVER LICENCE.
+
+PLEASE READ THESE TERMS AND CONDITIONS BEFORE INSTALLING THE SOFTWARE.
+
+These terms and conditions apply to the Chestysoft csImageFile programme 
+and any accompanying documentation (referred to as "the software"). 
+By installing the software, you are considered to have agreed to the 
+terms and conditions.
+
+This licence grants you a non-exclusive licence to install and use the 
+software on any server computer that you own.
+
+The software is the intellectual property of Chestysoft, and may not be 
+copied except for backup purposes and for installation as described above. You may not resell or otherwise distribute the software.
+
+The software is sold "as is" and without warranties as to performance or 
+purpose. Any liability of Chestysoft will be limited to product 
+replacement or refund of the purchase price.
+
+Chestysoft, December 2005.
+Web site: www.chestysoft.com
+Email: info@chestysoft.com
